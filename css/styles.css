@@ -16,8 +16,14 @@
   font-family: var(--poppins-font);
 }
 
+*:not(h1) {
+  color: var(--header-text-color);
+}
+
 body {
   background-color: var(--primary-color);
+  color: var(--header-text-color);
+  /* color: var(--button-color); */
 }
 
 /*======================================
@@ -168,22 +174,42 @@ a {
   font-size: 16px;
 }
 
-.hero .container .hero-content h1 {
+.hero .container .hero-content #main-heading {
   width: 559px;
-  color: var(--button-color);
+  color: var(--button-color) !important;
   font-size: 52px;
 }
-/*---------------------SVG Background-------------------------*/
+
 /*======================================
              HERO-SECTION--END
 =======================================*/
 
 /*======================================
-             SERVICES-SECTION-START
+             browse-SECTION-START
 =======================================*/
+.browse .container h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 56px;
+}
 
+.browse .container p {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 62px;
+}
+.browse .container:last-child {
+  width: 1183px;
+  justify-content: space-between;
+}
+.browse .container h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 77px;
+}
 /* ----======================================
-             SERVICES-SECTION--END
+             browse-SECTION--END
 =======================================--> */
 
 /*======================================
