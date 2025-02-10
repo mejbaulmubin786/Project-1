@@ -84,10 +84,9 @@ a {
 .nav-bar .container .menu li {
   position: relative;
 }
-
 .sub-menu {
   position: absolute;
-  top: 300%;
+  top: 500%;
   background-color: var(--primary-color);
   padding: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -95,29 +94,41 @@ a {
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: top 0.2s ease-in-out, opacity 0.3s ease-in-out;
 }
-.sub-menu > li {
+
+.sub-menu li {
   padding: 8px 20px;
   position: relative;
 }
-
 .menu li:hover > .sub-menu {
   top: 100%;
   opacity: 1;
   visibility: visible;
 }
-
-.sub-menu .sub-menu {
-  position: absolute;
+.menu .sub-menu .sub-menu {
   top: 0%;
   left: 300%;
   opacity: 0;
   visibility: hidden;
   transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-.sub-menu li:hover .sub-menu {
+.menu .sub-menu li:hover > .sub-menu {
   top: 0;
+  left: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu .sub-menu .sub-menu .sub-menu {
+  top: 500%;
+  left: 100%;
+  visibility: hidden;
+  transition: top 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.menu .sub-menu .sub-menu li:hover > .sub-menu {
+  top: 0%;
   left: 100%;
   opacity: 1;
   visibility: visible;
@@ -151,7 +162,17 @@ a {
   box-sizing: border-box;
   margin-right: 58px;
 }
+.hero .container .hero-content h4 {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 16px;
+}
 
+.hero .container .hero-content h1 {
+  width: 559px;
+  color: var(--button-color);
+  font-size: 52px;
+}
 /*---------------------SVG Background-------------------------*/
 /*======================================
              HERO-SECTION--END

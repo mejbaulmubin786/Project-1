@@ -1,0 +1,59 @@
+.nav-bar .container .menu li {
+  position: relative;
+}
+
+/* প্রথম লেভেলের সাব-মেনু নিচ থেকে উপরে উঠবে */
+.sub-menu {
+  position: absolute;
+  top: 200%;
+  left: 0;
+  background-color: var(--primary-color);
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* প্রথম লেভেলের সাব-মেনু hover করলে দেখা যাবে */
+.menu li:hover > .sub-menu {
+  top: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* দ্বিতীয় লেভেলের সাব-মেনু (ডান দিক থেকে আসবে) */
+.menu .sub-menu .sub-menu {
+  position: absolute;
+  top: 0;
+  left: 150%;
+  opacity: 0;
+  visibility: hidden;
+  transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* দ্বিতীয় লেভেলের সাব-মেনু hover করলে ডান দিক থেকে আসবে */
+.menu .sub-menu li:hover > .sub-menu {
+  left: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* তৃতীয় লেভেলের সাব-মেনু (ডান দিক থেকে আসবে) */
+.menu .sub-menu .sub-menu .sub-menu {
+  position: absolute;
+  top: 0;
+  left: 150%;
+  opacity: 0;
+  visibility: hidden;
+  transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* তৃতীয় লেভেলের সাব-মেনু hover করলে ডান দিক থেকে আসবে */
+.menu .sub-menu .sub-menu li:hover > .sub-menu {
+  left: 100%;
+  opacity: 1;
+  visibility: visible;
+}
