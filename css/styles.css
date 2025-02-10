@@ -59,8 +59,7 @@ a {
 .nav-bar {
   background-color: var(--primary-color);
 }
-.nav-bar nav {
-}
+
 .nav-bar .container {
   padding-top: 23px;
   padding-bottom: 36px;
@@ -90,7 +89,7 @@ a {
   position: absolute;
   top: 300%;
   background-color: var(--primary-color);
-  padding: 10px 10px;
+  padding: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   white-space: nowrap;
@@ -98,21 +97,30 @@ a {
   visibility: hidden;
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-.nav-bar .container .menu li:hover .sub-menu {
+.sub-menu > li {
+  padding: 8px 20px;
+  position: relative;
+}
+
+.menu li:hover > .sub-menu {
   top: 100%;
   opacity: 1;
   visibility: visible;
 }
-.sub-menu li {
-  position: relative;
-}
+
 .sub-menu .sub-menu {
   position: absolute;
-  top: 0;
-  left: 300%; /* Place it on the right */
+  top: 0%;
+  left: 300%;
   opacity: 0;
   visibility: hidden;
   transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.sub-menu li:hover .sub-menu {
+  top: 0;
+  left: 100%;
+  opacity: 1;
+  visibility: visible;
 }
 
 /*======================================
@@ -142,8 +150,6 @@ a {
   padding: 62px 43px 37px 39px;
   box-sizing: border-box;
   margin-right: 58px;
-
-  /* margin-right: 58px; */
 }
 
 /*---------------------SVG Background-------------------------*/
