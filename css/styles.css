@@ -16,10 +16,6 @@
   font-family: var(--poppins-font);
 }
 
-*:not(h1) {
-  color: var(--header-text-color);
-}
-
 body {
   background-color: var(--primary-color);
   color: var(--header-text-color);
@@ -55,6 +51,31 @@ ul {
 a {
   text-decoration: none;
 }
+h2 {
+  text-align: center;
+  font-size: 32px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 24px;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 25px 72px;
+  background-color: var(--button-color);
+  color: var(--primary-color);
+}
+
 /*======================================
           Common CSS End
 =======================================*/
@@ -168,18 +189,26 @@ a {
   box-sizing: border-box;
   margin-right: 58px;
 }
+.hero .container .hero-content p {
+  margin-top: 17px;
+  text-align: left;
+  justify-content: left;
+}
 .hero .container .hero-content h4 {
   color: var(--text-color);
   font-weight: 400;
   font-size: 16px;
 }
 
-.hero .container .hero-content #main-heading {
-  width: 559px;
+.hero .container .hero-content #main-heading span {
   color: var(--button-color) !important;
   font-size: 52px;
+  display: block;
+  line-height: 65px;
 }
-
+.hero .container .hero-content .common-button {
+  margin-top: 46px;
+}
 /*======================================
              HERO-SECTION--END
 =======================================*/
@@ -188,6 +217,29 @@ a {
              browse-SECTION-START
 =======================================*/
 .browse .container h2 {
+  margin-top: 56px;
+}
+
+.browse .container p {
+  margin-bottom: 62px;
+}
+.browse .container:last-child {
+  width: 1183px;
+  justify-content: space-between;
+}
+.browse .container h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 77px;
+}
+/* ----======================================
+             browse-SECTION--END
+=======================================--> */
+/*======================================
+             PRODUCT-SECTION-START
+=======================================*/
+.products .container h2 {
   text-align: center;
   font-size: 32px;
   margin-top: 56px;
@@ -208,10 +260,20 @@ a {
   margin-top: 30px;
   margin-bottom: 77px;
 }
-/* ----======================================
-             browse-SECTION--END
-=======================================--> */
 
+.browse .container .products-display {
+  width: 100%;
+  flex-wrap: wrap;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 77px;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+}
+/* ----======================================
+             PRODUCT-SECTION--END
+=======================================--> */
 /*======================================
              INNOVATE & Resources-SECTION-START resources
 =======================================*/
