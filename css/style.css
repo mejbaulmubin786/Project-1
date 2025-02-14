@@ -90,24 +90,26 @@ ul li a {
     Header & Navbar
 =========================== */
 .header {
+  width: 100%;
   background: var(--color-white);
   padding: 20px 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .header .container .navbar {
-  gap: 50px;
+  /* width: 90%; */
+  margin: 0 auto;
 }
-.header .container .navbar a {
-  flex: 1;
+.header .container .navbar > a {
+  width: 25%;
 }
 .header .container .navbar .icons {
-  flex: 1;
+  width: 25%;
 }
 .header .container .navbar .icons a:hover i {
   color: var(--color-button-primary);
 }
 .header .container .navbar .menu {
-  flex: 2;
+  width: 50%;
 }
 .header .container .navbar .menu li {
   position: relative;
@@ -195,11 +197,6 @@ ul li a {
   color: var(--color-black);
   font-size: 16px;
 }
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
 
 /* ===========================
     Hero Section
@@ -220,18 +217,15 @@ ul li a {
   margin: 10px auto;
 } */
 
-.hero {
-  background-image: url(../images/background.jpg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .hero .container {
   height: 716.83px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero .container .hero-content {
   border-radius: 10px;
@@ -239,7 +233,7 @@ ul li a {
   padding: 62px 43px 37px 39px;
   margin-right: 58px;
 }
-.hero .container .hero-content p {
+.hero .container .hero-content p:not(.btn) {
   margin-top: 30px;
   text-align: left;
   font-weight: 500;
@@ -263,20 +257,44 @@ ul li a {
 }
 .hero .container .hero-content .common-button {
   margin-top: 46px;
+  display: inline-block;
+}
+.hero .container .hero-content .common-button p {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .container .hero-content .common-button p::before {
+  content: "";
+  background-color: var(--color-white);
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  transition: 0.9s;
+}
+.hero .container .hero-content .common-button p:hover::before {
+  width: 100%;
+}
+.hero .container .hero-content .common-button p:hover p span {
+  color: var(--color-button-primary);
 }
 
 .btn {
   background-color: var(--color-button-primary);
   display: inline-block;
   padding: 25px 72px;
+  color: var(--color-white);
 }
 
 /*======================================
              browse-SECTION-START
 =======================================*/
-.browse .container h2 {
+.browse .container:first-child h2 {
   margin-top: 56px;
   text-align: center;
+  font-size: 32px;
 }
 
 .browse .container p {
@@ -300,6 +318,7 @@ ul li a {
 .products .container:first-child h2 {
   text-align: center;
   margin-bottom: 32px;
+  font-size: 40px;
 }
 .products .container .products-display {
   display: grid;
@@ -311,6 +330,7 @@ ul li a {
   background-color: #f4f5f7;
   width: 285px;
   padding-bottom: 30px;
+  position: relative;
 }
 
 .products .container .products-display .product h2:last-child {
@@ -326,6 +346,37 @@ ul li a {
 }
 .products .container .products-display .product .text {
   padding-left: 16px;
+}
+.products .container .product .overlay {
+  width: 285px;
+  height: 446px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(58, 58, 58, 0.72);
+  opacity: 0;
+  transition: 0.9s;
+}
+.products .container .product .overlay:hover {
+  opacity: 1;
+}
+.products .container .product .overlay .common-button .btn {
+  display: inline-block;
+  padding: 12px 52px;
+  color: var(--color-button-primary);
+  background-color: var(--color-white);
+  font-size: 16px;
+  font-weight: 600;
+}
+.products .container .product .overlay .icons {
+  gap: 20px;
+}
+.products .container .product .overlay p {
+  color: var(--color-background-primary);
+  margin-top: 24px;
 }
 /* ===========================
     About Section
