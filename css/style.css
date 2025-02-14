@@ -259,13 +259,13 @@ ul li a {
   margin-top: 46px;
   display: inline-block;
 }
-.hero .container .hero-content .common-button p {
+.hero .container .hero-content .common-button {
   position: relative;
   overflow: hidden;
 }
 
-.hero .container .hero-content .common-button p::before {
-  content: "";
+.hero .container .hero-content .common-button::before {
+  content: "BUY NOW";
   background-color: var(--color-white);
   position: absolute;
   width: 0%;
@@ -273,11 +273,17 @@ ul li a {
   right: 0;
   top: 0;
   transition: 0.9s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  overflow: hidden;
 }
-.hero .container .hero-content .common-button p:hover::before {
+.hero .container .hero-content .common-button p {
+  z-index: 2;
+}
+.hero .container .hero-content .common-button:hover::before {
   width: 100%;
-}
-.hero .container .hero-content .common-button p:hover p span {
   color: var(--color-button-primary);
 }
 
