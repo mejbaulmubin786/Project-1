@@ -1,34 +1,67 @@
+/* ===========================
+    Global Styles
+=========================== */
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: #fcf8f3;
-  --text-color: #000000;
-  --header-text-color: #3a3a3a;
-  --extra-text-color: #616161;
-  --special-color: #fff3e3;
-  --button-color: #b88e2f;
-  --poppins-font: "Poppins", sans-serif;
+  /* Color Variables */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-background-primary: #fcf8f3;
+  --color-background-secondary: #fff3e3;
+  --color-text-primary: #333333;
+  --color-text-secondary: #3a3a3a;
+  --color-text-muted: #616161;
+  --color-text-light: #666666;
+  --color-placeholder: #9f9f9f;
+  --color-button-primary: #b88e2f;
+  --color-accent: #ff6600;
+
+  /* Typography */
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
 }
 
+/* ===========================
+    Universal Selector
+=========================== */
 * {
   margin: 0;
   padding: 0;
-  color: var(--header-text-color);
-  font-family: var(--poppins-font);
+  box-sizing: border-box;
 }
 
+/* ===========================
+    Base Styles
+=========================== */
 body {
-  background-color: var(--primary-color);
-  color: var(--header-text-color);
-  /* color: var(--button-color); */
+  font-family: var(--font-primary);
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-/*======================================
-          Common CSS ‍Start
-=======================================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  color: var(--color-text-secondary);
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--color-text-muted);
+}
+
 .container {
-  width: 1440px;
+  width: 90%;
+  max-width: 1440px;
   margin: 0 auto;
 }
+
 .d-flex {
   display: flex;
 }
@@ -43,212 +76,242 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 ul {
   list-style: none;
 }
-
-a {
+ul li a {
   text-decoration: none;
-}
-h2 {
-  text-align: center;
-  font-size: 32px;
-}
-
-h3 {
-  text-align: center;
-  font-size: 24px;
-}
-
-p {
-  text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 25px 72px;
-  background-color: var(--button-color);
-  color: var(--primary-color);
-}
-
-/*======================================
-          Common CSS End
-=======================================*/
-
-/*======================================
-          nav-bar CSS ‍Start
-=======================================*/
-.nav-bar {
-  background-color: var(--primary-color);
-}
-
-.nav-bar .container {
-  padding-top: 23px;
-  padding-bottom: 36px;
-}
-.nav-bar .container .menu {
-  width: 430px;
-}
-
-.nav-bar .container .icons {
-  width: 247px;
-}
-
-.nav-bar .container .menu li a {
+  color: var(--color-black);
   font-size: 16px;
-  color: var(--text-color);
-  font-weight: 500;
 }
 
-.nav-bar .container .icons i {
-  font-size: 28px;
+/* ===========================
+    Header & Navbar
+=========================== */
+.header {
+  width: 100%;
+  background: var(--color-white);
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.nav-bar .container .menu li {
+.header .container .navbar {
+  padding-left: 100px;
+  padding-right: 100px;
+  /* width: 90%; */
+  margin: 0 auto;
+}
+.header .container .navbar > a {
+  width: 25%;
+}
+.header .container .navbar .icons {
+  width: 25%;
+}
+.header .container .navbar .icons a:hover i {
+  color: var(--color-button-primary);
+}
+.header .container .navbar .menu {
+  width: 50%;
+}
+.header .container .navbar .menu li {
   position: relative;
 }
-.sub-menu {
+.header .container .navbar .menu > li:hover a {
+  color: var(--color-button-primary);
+}
+.header .container .navbar .menu .sub-menu {
   position: absolute;
-  top: 500%;
-  background-color: var(--primary-color);
-  padding: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: top 0.2s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.sub-menu li {
-  padding: 8px 20px;
-  position: relative;
-}
-.menu li:hover > .sub-menu {
+  background-color: var(--color-white);
+  padding: 10px 10px;
   top: 100%;
-  opacity: 1;
-  visibility: visible;
-}
-.menu .sub-menu .sub-menu {
-  top: 0%;
-  left: 300%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
   opacity: 0;
-  visibility: hidden;
-  transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: 0.9s;
+  display: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
-.menu .sub-menu li:hover > .sub-menu {
-  top: 0;
-  left: 100%;
+.header .container .navbar .menu .sub-menu li a {
+  color: var(--color-black);
+}
+.header .container .navbar .menu .sub-menu li:hover a {
+  color: var(--color-button-primary);
+}
+.header .container .navbar .menu li:hover > .sub-menu {
   opacity: 1;
-  visibility: visible;
+  display: block;
+}
+.header .container .navbar .menu .sub-menu li {
+  position: relative;
+  white-space: nowrap;
 }
 
-.menu .sub-menu .sub-menu .sub-menu {
-  top: 500%;
-  left: 100%;
-  visibility: hidden;
-  transition: top 0.2s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.menu .sub-menu .sub-menu li:hover > .sub-menu {
+.header .container .navbar .menu .sub-menu .sub-menu {
   top: 0%;
-  left: 100%;
+  left: 150%;
+  transform: translate(-50%);
+  opacity: 0;
+  transition: 0.9s;
+  display: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.header .container .navbar .menu .sub-menu .sub-menu li a {
+  color: var(--color-black);
+}
+.header .container .navbar .menu .sub-menu li:hover .sub-menu > .sub-menu {
   opacity: 1;
-  visibility: visible;
+  display: block;
+}
+.header .container .navbar .menu .sub-menu li:not(:last-child) {
+  padding-bottom: 8px;
+}
+.header .container .navbar .menu .sub-menu .sub-menu .sub-menu {
+  top: 0%;
+  left: 150%;
+  transform: translate(-50%);
+  opacity: 0;
+  transition: 0.9s;
+  display: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.header .container .navbar .menu .sub-menu .sub-menu li:hover a {
+  color: var(--color-button-primary);
+}
+.header .container .navbar .menu .sub-menu .sub-menu > li:hover .sub-menu {
+  opacity: 1;
+  display: block;
 }
 
-/*======================================
-          nav-bar CSS End
-=======================================*/
-/*======================================
-             HERO-SECTION--Start
-=======================================*/
+.header .container .navbar .menu .sub-menu .sub-menu .sub-menu li a {
+  color: var(--color-black);
+}
+.header .container .navbar .menu .sub-menu .sub-menu .sub-menu li:hover a {
+  color: var(--color-button-primary);
+}
+.header .container .navbar .icons {
+  text-align: right;
+}
+.header .container .navbar .icons a i {
+  color: var(--color-black);
+  font-size: 16px;
+}
+
+/* ===========================
+    Hero Section
+=========================== */
 .hero {
-  background-image: url(../images/background.jpg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: white;
 }
 
+.hero h1 {
+  font-size: 42px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 10px auto;
+}
 .hero .container {
   height: 716.83px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero .container .hero-content {
-  width: 643px;
-  height: 443px;
   border-radius: 10px;
-  background-color: var(--special-color);
+  background-color: var(--color-background-secondary);
   padding: 62px 43px 37px 39px;
-  box-sizing: border-box;
   margin-right: 58px;
 }
-.hero .container .hero-content p {
-  margin-top: 17px;
+.hero .container .hero-content p:not(.btn) {
+  margin-top: 30px;
   text-align: left;
-  justify-content: left;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--color-text-primary);
 }
-.hero .container .hero-content h4 {
+.hero .container .hero-content p span {
+  display: block;
+}
+/* .hero .container .hero-content h1 {
   color: var(--text-color);
-  font-weight: 400;
-  font-size: 16px;
-}
+  font-weight: 700;
+  font-size: 52px;
+} */
 
-.hero .container .hero-content #main-heading span {
-  color: var(--button-color) !important;
+.hero .container .hero-content h1 span {
+  color: var(--color-button-primary);
   font-size: 52px;
   display: block;
   line-height: 65px;
 }
 .hero .container .hero-content .common-button {
   margin-top: 46px;
+  display: inline-block;
 }
-/*======================================
-             HERO-SECTION--END
-=======================================*/
+.hero .container .hero-content .common-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .container .hero-content .common-button::before {
+  content: "BUY NOW";
+  background-color: var(--color-white);
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  transition: 0.9s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  overflow: hidden;
+}
+.hero .container .hero-content .common-button p {
+  z-index: 2;
+}
+.hero .container .hero-content .common-button:hover::before {
+  width: 100%;
+  color: var(--color-button-primary);
+}
+
+.btn {
+  background-color: var(--color-button-primary);
+  display: inline-block;
+  padding: 25px 72px;
+  color: var(--color-white);
+}
 
 /*======================================
              browse-SECTION-START
 =======================================*/
-.browse .container h2 {
-  margin-top: 56px;
+.browse {
+  padding-top: 56px;
+  background-color: white;
 }
-
-.browse .container p {
-  margin-bottom: 62px;
-}
-.browse .container:last-child {
-  width: 1183px;
-  justify-content: space-between;
-}
-.browse .container h3 {
-  text-align: center;
-  font-size: 24px;
-  margin-top: 30px;
-  margin-bottom: 77px;
-}
-/* ----======================================
-             browse-SECTION--END
-=======================================--> */
-/*======================================
-             PRODUCT-SECTION-START
-=======================================*/
-.products .container h2 {
+.browse .container:first-child h2 {
   text-align: center;
   font-size: 32px;
-  margin-top: 56px;
 }
 
 .browse .container p {
-  text-align: center;
-  font-size: 20px;
   margin-bottom: 62px;
+  text-align: center;
 }
 .browse .container:last-child {
   width: 1183px;
@@ -261,84 +324,195 @@ p {
   margin-bottom: 77px;
 }
 
-.browse .container .products-display {
-  width: 100%;
-  flex-wrap: wrap;
-  font-size: 24px;
-  margin-top: 30px;
-  margin-bottom: 77px;
-  justify-content: center;
-  align-items: center;
-  column-gap: 30px;
+/* ===========================
+    Product Section
+=========================== */
+.products {
+  background-color: white;
 }
-.product .container .products-display {
+.products .container:first-child h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 40px;
+}
+.products .container .products-display {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 32px;
 }
-/* ----======================================
-             PRODUCT-SECTION--END
-=======================================--> */
-/*======================================
-             INNOVATE & Resources-SECTION-START resources
-=======================================*/
+.products .container .products-display .product {
+  background-color: #f4f5f7;
+  width: 285px;
+  padding-bottom: 30px;
+  position: relative;
+}
 
-/*======================================
-             INNOVATE-SECTION--END
-=======================================*/
-/*======================================
-             SHOWCASE-SECTION-START
-=======================================*/
+.products .container .products-display .product h2:last-child {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
 
-/*======================================
-  SHOWCASE-SECTION--END
-  =======================================*/
+.products .container .products-display .product h2 del {
+  font-size: 16px;
+  font-weight: 400;
+  color: #b0b0b0;
+}
+.products .container .products-display .product .text {
+  padding-left: 16px;
+}
+.products .container .product .overlay {
+  width: 285px;
+  height: 446px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(58, 58, 58, 0.72);
+  opacity: 0;
+  transition: 0.9s;
+}
+.products .container .product .overlay:hover {
+  opacity: 1;
+}
+.products .container .product .overlay .common-button .btn,
+.products .container .common-button .btn {
+  display: inline-block;
+  padding: 12px 52px;
+  color: var(--color-button-primary);
+  background-color: var(--color-white);
+  font-size: 16px;
+  font-weight: 600;
+}
+.products .container:last-child .common-button .btn {
+  border: 1px solid var(--color-button-primary);
+  margin-bottom: 48px;
+}
+.products .container:last-child {
+  text-align: center;
+}
+.products .container:last-child .common-button {
+  margin: 32px auto;
+}
+.products .container .product .overlay .icons {
+  gap: 20px;
+}
+.products .container .product .overlay p {
+  color: var(--color-background-primary);
+  margin-top: 24px;
+}
+/* ===========================
+    About Section
+=========================== */
+.about {
+  padding: 80px 20px;
+  display: flex;
+  gap: 42px;
+}
 
-/*======================================
-            companies-SECTION-START
-=======================================*/
+.about .about-content {
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+.about .about-content h2 {
+  width: 422px;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
 
-/*======================================
-            TRAIL-SECTION--END
-  =======================================*/
+.about .about-content p {
+  width: 368px;
+  margin-bottom: 20px;
+}
+.about .carousel-container {
+  flex: 2;
+}
+.about .container .carousel-container .first-img {
+  position: relative;
+}
+.about .carousel-container .first-img .overlay {
+  width: 217px;
+  height: 130px;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background-color: var(--color-white);
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 32px;
+}
+.about .carousel-container .first-img .overlay h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+/* ===========================
+    Services Section
+=========================== */
+.services {
+  background: var(--color-white);
+  padding: 80px 20px;
+  text-align: center;
+}
 
-/*======================================
-            Trail-Content-SECTION--END
-  =======================================*/
+.service-card {
+  background: var(--color-background-secondary);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
 
-/*======================================
-            Trail-Content-SECTION--END
-  =======================================*/
-/*======================================
-            RECENT-SECTION--END
-  =======================================*/
+.service-card:hover {
+  transform: scale(1.05);
+}
 
-/*======================================
-            RECENT-SECTION--END
-  =======================================*/
-/*======================================
-            PROJECT-SECTION--END
-  =======================================*/
+/* ===========================
+    Testimonials
+=========================== */
+.testimonials {
+  background: var(--color-background-primary);
+  padding: 80px 20px;
+  text-align: center;
+}
 
-/*======================================
-            PROJECT-SECTION--END
-  =======================================*/
-/*======================================
-            FOOTER-SECTION--END
-  =======================================*/
+.testimonial {
+  max-width: 600px;
+  margin: 0 auto;
+  font-style: italic;
+  color: var(--color-text-light);
+}
 
-/*======================================
-            FOOTER-SECTION--END
-  =======================================*/
-/*======================================
-            -SECTION--END
-  =======================================*/
-/*======================================
-            -SECTION--END
-  =======================================*/
-/*======================================
-            -SECTION--END
-  =======================================*/
-/*======================================
-            -SECTION--END
-  =======================================*/
+/* ===========================
+    Footer
+=========================== */
+.footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ===========================
+    Responsive Design
+=========================== */
+/* @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about img {
+    width: 100%;
+  }
+} */
