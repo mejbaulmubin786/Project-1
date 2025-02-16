@@ -264,7 +264,7 @@ a {
 }
 .hero .container .hero-content .common-button {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .hero .container .hero-content .common-button::before {
@@ -280,7 +280,7 @@ a {
   justify-content: center;
   align-items: center;
   color: transparent;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .hero .container .hero-content .common-button p {
   z-index: 2;
@@ -469,6 +469,27 @@ a {
 }
 .about .carousel-container .carousel-frame .carousel-footer div:hover {
   outline: 1px solid var(--color-button-primary);
+}
+.carousel-frame .carousel-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.carousel-content .right-bar {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-white);
+  color: var(--color-button-primary);
+  position: absolute;
+  left: 355px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-content .right-bar i {
+  font-size: 24px;
 }
 /* ===========================
     Services Section
