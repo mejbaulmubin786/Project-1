@@ -84,7 +84,7 @@ p {
 ul {
   list-style: none;
 }
-ul li a {
+a {
   text-decoration: none;
   color: var(--color-black);
   font-size: 16px;
@@ -411,6 +411,7 @@ ul li a {
   padding: 80px 20px;
   display: flex;
   gap: 42px;
+  background-color: #fcf8f3;
 }
 
 .about .about-content {
@@ -430,9 +431,14 @@ ul li a {
 }
 .about .carousel-container {
   flex: 2;
+  gap: 24px;
+  overflow: hidden;
 }
 .about .container .carousel-container .first-img {
   position: relative;
+}
+.about .container .carousel-container .carousel-frame .carousel-slider {
+  gap: 24px;
 }
 .about .carousel-container .first-img .overlay {
   width: 217px;
@@ -448,6 +454,21 @@ ul li a {
 .about .carousel-container .first-img .overlay h3 {
   font-size: 28px;
   margin-bottom: 10px;
+}
+.about .carousel-container .carousel-frame .carousel-footer {
+  gap: 20px;
+}
+.about .carousel-container .carousel-frame .carousel-footer div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+  margin-top: 40px;
+  outline: 1px solid transparent;
+  outline-offset: 5px;
+}
+.about .carousel-container .carousel-frame .carousel-footer div:hover {
+  outline: 1px solid var(--color-button-primary);
 }
 /* ===========================
     Services Section
