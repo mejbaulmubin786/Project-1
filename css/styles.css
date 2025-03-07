@@ -354,7 +354,7 @@ a {
   color: var(--color-text-secondary);
 }
 
-.products .container .products-display .product h2 del {
+.products .container .products-display .product h3 del {
   font-size: 16px;
   font-weight: 400;
   color: #b0b0b0;

@@ -8,7 +8,7 @@
   --color-background-primary: #fcf8f3;
   --color-background-secondary: #fff3e3;
   --color-text-primary: #333333;
-  --color-text-secondary: #3a3a3a;
+  --color-text-secondary: 58, 58, 58;
   --color-text-muted: #616161;
   --color-text-light: #898989;
   --color-placeholder: #b0b0b0;
@@ -37,6 +37,40 @@ body {
 span {
   display: block;
 }
+
+.common-button {
+  padding: 1.56rem 4.5rem;
+  display: inline-block;
+  background-color: var(--color-button-primary);
+  position: relative;
+}
+.common-button a {
+  color: var(--color-white);
+  line-height: auto;
+  position: relative;
+  transition: 0.9s;
+  z-index: 1;
+}
+.common-button::before {
+  width: 0%;
+  position: absolute;
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--color-white);
+  transition: 0.9s;
+}
+.common-button:hover::before {
+  width: 100%;
+}
+.common-button:hover a {
+  color: var(--color-button-primary);
+}
+
+.text-align-center {
+  text-align: center;
+}
 /*=========================Flex property=================================*/
 .d-flex {
   display: flex;
@@ -56,6 +90,18 @@ span {
   align-items: center;
   justify-content: space-between;
 }
+
+.direction-column {
+  flex-direction: column;
+}
+
+/*=========================Position property=================================*/
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
 /*=========================common property=================================*/
 h4,
 p,
@@ -63,10 +109,16 @@ a {
   font-size: 1rem;
 }
 
+h2 {
+  font-size: 2rem;
+}
 .fw-normal {
   font-weight: 400;
 }
 
+h3 {
+  font-size: 1.25rem;
+}
 .fw-medium {
   font-weight: 500;
 }
@@ -114,6 +166,13 @@ a {
 
 .navbar .container .icons i {
   color: var(--color-black);
+  font-size: 1rem;
+}
+
+.menu-toggle {
+  display: none; /* বড় স্ক্রিনে আইকন লুকানো থাকবে */
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* ========================================================================
@@ -129,4 +188,139 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-top: 1.18rem;
+  padding-right: 3.625rem;
+}
+.banner .container .banner-content {
+  background-color: var(--color-background-secondary);
+  padding: 3.87rem 2.69rem 2.31rem 2.43rem;
+}
+.banner .container .banner-content h1 {
+  color: var(--color-button-primary);
+  font-size: 3.25rem;
+}
+.banner .container .banner-content p {
+  font-size: 1.125rem;
+  padding-bottom: 2.87rem;
+}
+/* ========================================================================
+                               GALLERY SECTION
+=========================================================================== */
+.gallery .container {
+  padding-top: 3.52rem;
+  padding-bottom: 3.52rem;
+}
+.gallery .container header {
+  padding-bottom: 4rem;
+}
+
+.gallery .container .gallery-images {
+  gap: 1.2rem;
+}
+.gallery .container .gallery-images h3 {
+  font-size: 1.5rem;
+  margin-top: 1.875rem;
+}
+/* ========================================================================
+                               PRODUCTS SECTION
+=========================================================================== */
+.products .container {
+  padding: 3.52rem 6.375rem 3.52rem;
+}
+.products .container header {
+  padding-bottom: 4rem;
+}
+.products .container .products-display {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+  grid-auto-flow: row dense;
+}
+
+.products .container .products-display .product {
+  width: 100%;
+  height: auto;
+  background-color: #f4f5f7;
+  padding-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.products .container .products-display .product img {
+  width: 100%;
+}
+.products .container .products-display .product .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(var(--color-text-secondary), 0.72);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.9s;
+}
+.products .container .products-display .product:hover .overlay {
+  opacity: 1;
+}
+.products .container .products-display .product .overlay .icons {
+  padding-top: 1.5rem;
+  gap: 1.25rem;
+}
+.products .container .common-button {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  background-color: var(--color-white);
+}
+
+.products .container .common-button a {
+  color: var(--color-button-primary);
+}
+
+.products .container .common-button:hover::before {
+  background-color: var(--color-button-primary);
+}
+
+.products .container .common-button:hover a {
+  color: var(--color-white);
+}
+.products .container .products-display .product .overlay .icons {
+  color: var(--color-white);
+}
+.products .container .products-display .product .text {
+  padding-left: 1rem;
+  text-align: left;
+}
+.products .container .products-display .product h2 {
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+.products .container .products-display .product .text p {
+  color: var(--color-text-light);
+}
+.products .container .products-display .product h3 del {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #b0b0b0;
+  padding-left: 1rem;
+}
+.products .container .common-button.btn {
+  margin-top: 2rem;
+  border: 1px solid var(--color-button-primary);
+}
+/* ========================================================================
+                          CAROUSEL SECTION
+=========================================================================== */
+.carousel {
+  background-color: var(--color-background-primary);
+}
+.carousel .container {
+  padding-left: 6.25rem;
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
 }

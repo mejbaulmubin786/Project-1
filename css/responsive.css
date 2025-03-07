@@ -1,0 +1,27 @@
+@media (max-width: 576px) {
+  .container {
+    width: 80%;
+  }
+
+  .menu {
+    display: none; /* ছোট স্ক্রিনে মেনু লুকিয়ে রাখবে */
+    flex-direction: column; /* মেনু আইটেমগুলো উপরে নিচে দেখাবে */
+    background-color: #f4f4f4; /* ব্যাকগ্রাউন্ড কালার */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  .menu-toggle {
+    display: block; /* ছোট স্ক্রিনে আইকন দেখাবে */
+    cursor: pointer;
+  }
+
+  nav .menu.show {
+    display: flex; /* যখন ক্লাস show থাকবে তখন মেনু দেখাবে */
+    flex-direction: column;
+  }
+}
