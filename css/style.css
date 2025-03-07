@@ -1,0 +1,132 @@
+/* ========================================================================
+                                Global Styles
+=========================================================================== */
+:root {
+  /* Color Variables */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-background-primary: #fcf8f3;
+  --color-background-secondary: #fff3e3;
+  --color-text-primary: #333333;
+  --color-text-secondary: #3a3a3a;
+  --color-text-muted: #616161;
+  --color-text-light: #898989;
+  --color-placeholder: #b0b0b0;
+  --color-button-primary: #b88e2f;
+  /* Typography */
+  --font-primary: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+html {
+  font-size: 100%; /* 16px Default */
+}
+
+body {
+  font-family: var(--font-primary);
+}
+span {
+  display: block;
+}
+/*=========================Flex property=================================*/
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.justify-content-around {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.justify-space-between {
+  align-items: center;
+  justify-content: space-between;
+}
+/*=========================common property=================================*/
+h4,
+p,
+a {
+  font-size: 1rem;
+}
+
+.fw-normal {
+  font-weight: 400;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* ========================================================================
+                               Universal Selector
+=========================================================================== */
+/* ========================================================================
+                               NAV-BAR Selector
+=========================================================================== */
+.navbar {
+  padding-top: 1.43rem;
+  padding-bottom: 1.43rem;
+}
+.navbar .container .logo {
+  flex-basis: 13%;
+  max-width: 185px;
+}
+.navbar .container .menu {
+  flex-basis: 30%;
+  max-width: 430px;
+}
+.navbar .container .menu li a {
+  color: var(--color-black);
+}
+.navbar .container .icons {
+  flex-basis: 17%;
+  max-width: 247px;
+}
+
+.navbar .container .icons i {
+  color: var(--color-black);
+}
+
+/* ========================================================================
+                               BANNER SECTION
+=========================================================================== */
+
+.banner .container {
+  height: 100vh;
+  max-height: 716.83px;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
