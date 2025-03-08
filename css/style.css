@@ -13,6 +13,7 @@
   --color-text-light: #898989;
   --color-placeholder: #b0b0b0;
   --color-button-primary: #b88e2f;
+  --gray-dard: #3a3a3a;
   /* Typography */
   --font-primary: "Poppins", sans-serif;
 }
@@ -94,7 +95,12 @@ span {
 .direction-column {
   flex-direction: column;
 }
-
+.justify-content-start {
+  justify-content: flex-start; /* আইটেমগুলিকে ধারকের শুরু থেকে সারিবদ্ধ করে */
+}
+.align-items-start {
+  align-items: flex-start; /* আইটেমগুলিকে ক্রস অক্ষের শুরুতে সারিবদ্ধ করে */
+}
 /*=========================Position property=================================*/
 .relative {
   position: relative;
@@ -314,13 +320,43 @@ a {
   border: 1px solid var(--color-button-primary);
 }
 /* ========================================================================
-                          CAROUSEL SECTION
+                          ABOUT SECTION
 =========================================================================== */
-.carousel {
+.about {
   background-color: var(--color-background-primary);
 }
-.carousel .container {
+.about .container {
   padding-left: 6.25rem;
   padding-top: 2.75rem;
   padding-bottom: 2.75rem;
+  gap: 2.62rem;
+  overflow: hidden;
 }
+.about .container .about-content {
+  flex-basis: 39%;
+  padding-top: 11rem;
+  color: var(--gray-dard);
+}
+.about .container .about-content p {
+  padding-bottom: 1.56rem;
+}
+.carousel-container {
+  flex-basis: 61%;
+  gap: 1.5rem;
+}
+
+.carousel-container .first-img {
+  flex-basis: 28%;
+}
+.carousel-slider {
+  gap: 1.5rem;
+}
+.carousel-slider img {
+}
+
+.carousel-frame {
+  margin-right: -320rem;
+}
+/* ========================================================================
+                          CAROUSEL SECTION
+=========================================================================== */
