@@ -407,6 +407,7 @@ a {
 /* ========================================================================
                            FURNITURE-GALLERY SECTION
 =========================================================================== */
+/*
 .furniture-gallery .container {
   padding-top: 4.18rem;
   padding-bottom: 3.125rem;
@@ -424,9 +425,10 @@ a {
 .picture {
   border: 1px solid rgb(0, 255, 42);
 }
-
+*/
 /*=================*/
 /* কনটেইনার এরিয়া */
+/*
 .furniture-gallery {
   position: relative;
   padding: 3rem 0;
@@ -435,7 +437,7 @@ a {
 
 .container {
   position: relative;
-  overflow: hidden; /* কনটেইনারের বাইরে থাকা অংশ লুকাবে */
+  overflow: hidden; 
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -456,11 +458,11 @@ a {
   font-weight: bold;
 }
 
-/* গ্যালারি স্টাইল */
+
 
 .picture {
   position: relative;
-  overflow: hidden; /* ছবির বাহিরে কিছু গেলে লুকাবে */
+  overflow: hidden; 
   border-radius: 8px;
 }
 
@@ -472,5 +474,6 @@ a {
 }
 
 .picture:hover img {
-  transform: scale(1.1); /* হোভার করলে ইমেজ জুম হবে */
+  transform: scale(1.1); 
 }
+*/
