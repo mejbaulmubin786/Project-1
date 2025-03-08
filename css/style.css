@@ -381,8 +381,6 @@ a {
 .carousel-slider {
   gap: 1.5rem;
 }
-.carousel-slider img {
-}
 
 .carousel-frame {
   margin-right: -320rem;
@@ -505,58 +503,3 @@ footer .container:last-child p:first-child {
 footer .container:last-child p:not(:first-child) {
   text-align: right;
 }
-/*
-
-
-*/
-/*=================*/
-/* কনটেইনার এরিয়া */
-/*
-.furniture-gallery {
-  position: relative;
-  padding: 3rem 0;
-  background-color: #f9f9f9;
-}
-
-.container {
-  position: relative;
-  overflow: hidden; 
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.text-container {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.text-container p {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-.text-container h2 {
-  font-size: 2rem;
-  color: #333;
-  font-weight: bold;
-}
-
-
-
-.picture {
-  position: relative;
-  overflow: hidden; 
-  border-radius: 8px;
-}
-
-.picture img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.picture:hover img {
-  transform: scale(1.1); 
-}
-*/
