@@ -339,17 +339,22 @@
         <a href="#portfolio" class="btn">Explore More</a>
       </div>
     </div>
-    <div class="carousel-container d-flex align-items-start">
+    <div class="carousel-container d-flex align-items-start relative">
       <div class="first-img">
         <img src="./images/about/image-1.png" alt="" />
-        <div class="overlay d-flex">
-          <p>01 &mdash; Bed Room</p>
-          <h3>Inner Peace</h3>
+        <div class="overlay absolute d-flex">
+          <div class="text-content">
+            <p>01 &mdash; Bed Room</p>
+            <h3>Inner Peace</h3>
+          </div>
+          <div class="arrow d-flex align-center">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
         </div>
       </div>
 
       <div class="carousel-frame">
-        <div class="carousel-content">
+        <div class="carousel-content relative">
           <div class="carousel-slider d-flex">
             <img
               class="carousel-image"
@@ -362,7 +367,7 @@
               alt="Image 2"
             />
           </div>
-          <div class="right-bar">
+          <div class="right-bar absolute d-flex align-center">
             <i class="fa-sharp fa-regular fa-angle-right"></i>
           </div>
         </div>

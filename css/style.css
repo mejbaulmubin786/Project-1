@@ -333,8 +333,8 @@ a {
   overflow: hidden;
 }
 .about .container .about-content {
-  flex-basis: 39%;
-  padding-top: 11rem;
+  flex-basis: 29%;
+  padding-top: 6.9rem;
   color: var(--gray-dard);
 }
 .about .container .about-content p {
@@ -345,6 +345,36 @@ a {
   gap: 1.5rem;
 }
 
+.carousel-container .overlay {
+  bottom: 1.5rem;
+  left: 1.5rem;
+  align-items: end;
+}
+.carousel-container .overlay h3 {
+  font-size: 1.75rem;
+  white-space: nowrap;
+}
+.carousel-container .overlay .text-content {
+  padding: 2rem 1rem 2rem 2rem;
+  background-color: var(--color-white);
+}
+.carousel-container .overlay .arrow {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-button-primary);
+}
+
+.right-bar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  left: 21rem;
+  top: 50%;
+  font-size: 24px;
+  color: var(--color-button-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 .carousel-container .first-img {
   flex-basis: 28%;
 }
@@ -356,6 +386,23 @@ a {
 
 .carousel-frame {
   margin-right: -320rem;
+}
+
+.carousel-footer {
+  margin: 2.5rem;
+  gap: 1.5rem;
+}
+.carousel-footer div {
+  width: 11px;
+  height: 11px;
+  background-color: #d8d8d8;
+  border-radius: 50%;
+  outline: 1px solid transparent;
+  outline-offset: 5px;
+}
+.about .carousel-container .carousel-frame .carousel-footer div:hover {
+  background-color: var(--color-button-primary);
+  outline: 1px solid var(--color-button-primary);
 }
 /* ========================================================================
                           CAROUSEL SECTION
