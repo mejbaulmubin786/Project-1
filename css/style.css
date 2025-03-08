@@ -405,5 +405,77 @@ a {
   outline: 1px solid var(--color-button-primary);
 }
 /* ========================================================================
-                          CAROUSEL SECTION
+                           FURNITURE-GALLERY SECTION
 =========================================================================== */
+.furniture-gallery .container {
+  padding-top: 4.18rem;
+  padding-bottom: 3.125rem;
+  text-align: center;
+  border: 1px solid red;
+}
+.furniture-gallery .container .gallery {
+  width: 124%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  grid-auto-rows: auto;
+  border: 1px solid rgb(68, 0, 255);
+}
+.picture {
+  border: 1px solid rgb(0, 255, 42);
+}
+
+/*=================*/
+/* কনটেইনার এরিয়া */
+.furniture-gallery {
+  position: relative;
+  padding: 3rem 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  position: relative;
+  overflow: hidden; /* কনটেইনারের বাইরে থাকা অংশ লুকাবে */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.text-container h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* গ্যালারি স্টাইল */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; /* গ্যালারি ছবির মধ্যে দূরত্ব */
+}
+
+.picture {
+  position: relative;
+  overflow: hidden; /* ছবির বাহিরে কিছু গেলে লুকাবে */
+  border-radius: 8px;
+}
+
+.picture img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.picture:hover img {
+  transform: scale(1.1); /* হোভার করলে ইমেজ জুম হবে */
+}
