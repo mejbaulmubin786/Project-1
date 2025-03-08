@@ -457,11 +457,6 @@ a {
 }
 
 /* গ্যালারি স্টাইল */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem; /* গ্যালারি ছবির মধ্যে দূরত্ব */
-}
 
 .picture {
   position: relative;
