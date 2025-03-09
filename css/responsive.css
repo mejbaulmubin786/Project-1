@@ -1,9 +1,46 @@
-@media (min-width: 320px) and (max-width: 575.99px) {
+@media (max-width: 575.99px) {
   html {
     font-size: 10px;
   }
   .container {
     width: 90%;
+  }
+  .banner .container {
+    padding: 0;
+  }
+  .banner .container .banner-content {
+    width: 100%;
+  }
+  .gallery .container .gallery-images {
+    flex-direction: column;
+  }
+  .gallery .container .gallery-images .images-item {
+    width: 100%;
+  }
+  .products .container .products-display {
+    grid-template-columns: 1fr;
+  }
+  .products .container .products-display .product {
+    width: 100%;
+  }
+  .about .container {
+    flex-direction: column;
+  }
+  .about .container .about-content {
+    flex-basis: 100%;
+  }
+  .carousel-container {
+    display: none;
+  }
+  .furniture-gallery .container .gallery {
+    width: 100%;
+    display: grid;
+
+    grid-template-columns: auto;
+    /* grid-template-columns: repeat(5, minmax(0, 1fr)); */
+  }
+  .picture {
+    width: 100%;
   }
 }
 
