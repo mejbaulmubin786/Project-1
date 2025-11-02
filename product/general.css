@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Variables */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-background-primary: #fcf8f3;
+    --color-background-secondary: #fff3e3;
+    --color-text-primary: #333333;
+    --color-text-secondary: 58, 58, 58;
+    --color-text-muted: #616161;
+    --color-text-light: #898989;
+    --color-placeholder: #b0b0b0;
+    --color-button-primary: #b88e2f;
+    --gray-dard: #3a3a3a;
+    /* Typography */
+    --font-primary: "Poppins", sans-serif;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.justify-content-around {
+    align-items: center;
+    justify-content: space-around;
+}
+
+.justify-space-between {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.direction-column {
+    flex-direction: column;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+    /* আইটেমগুলিকে ধারকের শুরু থেকে সারিবদ্ধ করে */
+}
+
+.align-items-start {
+    align-items: flex-start;
+    /* আইটেমগুলিকে ক্রস অক্ষের শুরুতে সারিবদ্ধ করে */
+}

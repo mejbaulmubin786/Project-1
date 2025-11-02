@@ -263,7 +263,9 @@ a {
                                PRODUCTS SECTION
 =========================================================================== */
 .products .container {
-  padding: 3.52rem 6.375rem 3.52rem;
+  max-width: 1236px;
+  padding: min(3.52em, 8%) min(6.375em, 8%);
+  margin: 0 auto;
 }
 
 .products .container header {
@@ -273,24 +275,22 @@ a {
 .products .container .products-display {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-  grid-template-rows: 1fr 1fr;
   gap: 2rem;
-  width: 100%;
-  height: auto;
-  grid-auto-flow: row dense;
+  /* grid-auto-flow: row dense; */
 }
 
 .products .container .products-display .product {
-  width: 100%;
-  height: auto;
   background-color: #f4f5f7;
-  padding-bottom: 30px;
+  padding-bottom: min(3em, 8%);
   position: relative;
   overflow: hidden;
 }
 
 .products .container .products-display .product img {
   width: 100%;
+  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
 .products .container .products-display .product .overlay {
