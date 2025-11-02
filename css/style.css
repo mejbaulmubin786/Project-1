@@ -28,13 +28,16 @@
   width: 1440px;
   margin: 0 auto;
 }
+
 html {
-  font-size: 100%; /* 16px Default */
+  font-size: 100%;
+  /* 16px Default */
 }
 
 body {
   font-family: var(--font-primary);
 }
+
 span {
   display: block;
 }
@@ -45,6 +48,7 @@ span {
   background-color: var(--color-button-primary);
   position: relative;
 }
+
 .common-button a {
   color: var(--color-white);
   line-height: auto;
@@ -52,6 +56,7 @@ span {
   transition: 0.9s;
   z-index: 1;
 }
+
 .common-button::before {
   width: 0%;
   position: absolute;
@@ -62,9 +67,11 @@ span {
   background-color: var(--color-white);
   transition: 0.9s;
 }
+
 .common-button:hover::before {
   width: 100%;
 }
+
 .common-button:hover a {
   color: var(--color-button-primary);
 }
@@ -72,6 +79,7 @@ span {
 .text-align-center {
   text-align: center;
 }
+
 /*=========================Flex property=================================*/
 .d-flex {
   display: flex;
@@ -95,19 +103,26 @@ span {
 .direction-column {
   flex-direction: column;
 }
+
 .justify-content-start {
-  justify-content: flex-start; /* আইটেমগুলিকে ধারকের শুরু থেকে সারিবদ্ধ করে */
+  justify-content: flex-start;
+  /* আইটেমগুলিকে ধারকের শুরু থেকে সারিবদ্ধ করে */
 }
+
 .align-items-start {
-  align-items: flex-start; /* আইটেমগুলিকে ক্রস অক্ষের শুরুতে সারিবদ্ধ করে */
+  align-items: flex-start;
+  /* আইটেমগুলিকে ক্রস অক্ষের শুরুতে সারিবদ্ধ করে */
 }
+
 /*=========================Position property=================================*/
 .relative {
   position: relative;
 }
+
 .absolute {
   position: absolute;
 }
+
 /*=========================common property=================================*/
 h4,
 p,
@@ -118,6 +133,7 @@ a {
 h2 {
   font-size: 2rem;
 }
+
 .fw-normal {
   font-weight: 400;
 }
@@ -125,6 +141,7 @@ h2 {
 h3 {
   font-size: 1.25rem;
 }
+
 .fw-medium {
   font-weight: 500;
 }
@@ -144,6 +161,7 @@ ul {
 a {
   text-decoration: none;
 }
+
 /* ========================================================================
                                Universal Selector
 =========================================================================== */
@@ -154,17 +172,21 @@ a {
   padding-top: 1.43rem;
   padding-bottom: 1.43rem;
 }
+
 .navbar .container .logo {
   flex-basis: 13%;
   max-width: 185px;
 }
+
 .navbar .container .menu {
   flex-basis: 30%;
   max-width: 430px;
 }
+
 .navbar .container .menu li a {
   color: var(--color-black);
 }
+
 .navbar .container .icons {
   flex-basis: 17%;
   max-width: 247px;
@@ -176,7 +198,8 @@ a {
 }
 
 .menu-toggle {
-  display: none; /* বড় স্ক্রিনে আইকন লুকানো থাকবে */
+  display: none;
+  /* বড় স্ক্রিনে আইকন লুকানো থাকবে */
   font-size: 24px;
   cursor: pointer;
 }
@@ -197,14 +220,17 @@ a {
   padding-top: 1.18rem;
   padding-right: 3.625rem;
 }
+
 .banner .container .banner-content {
   background-color: var(--color-background-secondary);
   padding: 3.87rem 2.69rem 2.31rem 2.43rem;
 }
+
 .banner .container .banner-content h1 {
   color: var(--color-button-primary);
   font-size: 3.25rem;
 }
+
 .banner .container .banner-content p {
   font-size: 1.125rem;
   padding-bottom: 2.87rem;
@@ -219,6 +245,7 @@ a {
   padding-top: 3.52rem;
   padding-bottom: 3.52rem;
 }
+
 .gallery .container header {
   padding-bottom: 4rem;
 }
@@ -226,22 +253,26 @@ a {
 .gallery .container .gallery-images {
   gap: 1.2rem;
 }
+
 .gallery .container .gallery-images h3 {
   font-size: 1.5rem;
   margin-top: 1.875rem;
 }
+
 /* ========================================================================
                                PRODUCTS SECTION
 =========================================================================== */
 .products .container {
   padding: 3.52rem 6.375rem 3.52rem;
 }
+
 .products .container header {
   padding-bottom: 4rem;
 }
+
 .products .container .products-display {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
   grid-template-rows: 1fr 1fr;
   gap: 2rem;
   width: 100%;
@@ -261,6 +292,7 @@ a {
 .products .container .products-display .product img {
   width: 100%;
 }
+
 .products .container .products-display .product .overlay {
   width: 100%;
   height: 100%;
@@ -274,13 +306,16 @@ a {
   opacity: 0;
   transition: 0.9s;
 }
+
 .products .container .products-display .product:hover .overlay {
   opacity: 1;
 }
+
 .products .container .products-display .product .overlay .icons {
   padding-top: 1.5rem;
   gap: 1.25rem;
 }
+
 .products .container .common-button {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -299,37 +334,45 @@ a {
 .products .container .common-button:hover a {
   color: var(--color-white);
 }
+
 .products .container .products-display .product .overlay .icons {
   color: var(--color-white);
 }
+
 .products .container .products-display .product .text {
   padding-left: 1rem;
   text-align: left;
   white-space: nowrap;
 }
+
 .products .container .products-display .product h2 {
   font-size: 1.5rem;
   padding-top: 1rem;
 }
+
 .products .container .products-display .product .text p {
   color: var(--color-text-light);
 }
+
 .products .container .products-display .product h3 del {
   font-size: 1rem;
   font-weight: 400;
   color: #b0b0b0;
   padding-left: 1rem;
 }
+
 .products .container .common-button.btn {
   margin-top: 2rem;
   border: 1px solid var(--color-button-primary);
 }
+
 /* ========================================================================
                           ABOUT SECTION
 =========================================================================== */
 .about {
   background-color: var(--color-background-primary);
 }
+
 .about .container {
   padding-left: 6.25rem;
   padding-top: 2.75rem;
@@ -337,14 +380,17 @@ a {
   gap: 2.62rem;
   overflow: hidden;
 }
+
 .about .container .about-content {
   flex-basis: 29%;
   padding-top: 6.9rem;
   color: var(--gray-dard);
 }
+
 .about .container .about-content p {
   padding-bottom: 1.56rem;
 }
+
 .carousel-container {
   flex-basis: 61%;
   gap: 1.5rem;
@@ -355,14 +401,17 @@ a {
   left: 1.5rem;
   align-items: end;
 }
+
 .carousel-container .overlay h3 {
   font-size: 1.75rem;
   white-space: nowrap;
 }
+
 .carousel-container .overlay .text-content {
   padding: 2rem 1rem 2rem 2rem;
   background-color: var(--color-white);
 }
+
 .carousel-container .overlay .arrow {
   width: 48px;
   height: 48px;
@@ -380,15 +429,18 @@ a {
   color: var(--color-button-primary);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .right-bar:hover {
   background-color: var(--color-white);
   left: 19rem;
   box-shadow: 0 2px 4px rgba(59, 6, 6, 0.61);
   color: aquamarine;
 }
+
 .carousel-container .first-img {
   flex-basis: 28%;
 }
+
 .carousel-slider {
   gap: 1.5rem;
 }
@@ -401,6 +453,7 @@ a {
   margin: 2.5rem;
   gap: 1.5rem;
 }
+
 .carousel-footer div {
   width: 11px;
   height: 11px;
@@ -409,10 +462,12 @@ a {
   outline: 1px solid transparent;
   outline-offset: 5px;
 }
+
 .about .carousel-container .carousel-frame .carousel-footer div:hover {
   background-color: var(--color-button-primary);
   outline: 1px solid var(--color-button-primary);
 }
+
 /* ========================================================================
                            FURNITURE-GALLERY SECTION
 =========================================================================== */
@@ -423,6 +478,7 @@ a {
   text-align: center;
   overflow: hidden;
 }
+
 .furniture-gallery .container .gallery {
   width: 130%;
   display: grid;
@@ -438,42 +494,51 @@ a {
   grid-row: 1 / 5;
   align-self: end;
 }
+
 .picture-2 {
   grid-column: 3/5;
   grid-row: 2/5;
   align-self: end;
 }
+
 .picture-3 {
   grid-column: 5;
   grid-row: 4/7;
   align-self: end;
 }
+
 .picture-4 {
   grid-column: 6/8;
   grid-row: 3/6;
   align-self: end;
 }
+
 .picture-5 {
   grid-column: 8/10;
   grid-row: 1/6;
   align-self: end;
 }
+
 .picture-6 {
   grid-column: 1/4;
   grid-row: 5/11;
 }
+
 .picture-7 {
   grid-column: 4;
   grid-row: 5/8;
 }
+
 .picture-8 {
   grid-column: 6;
   grid-row: 6/10;
 }
+
 .picture-9 {
   grid-column: 7/9;
   grid-row: 6/9;
 }
+
 .furniture-gallery .container .gallery img {
   width: 100%;
   object-fit: cover;
@@ -486,6 +551,7 @@ footer .container {
   justify-content: space-between;
   border-top: 2px solid rgba(0, 0, 0, 0.2);
 }
+
 footer .container img {
   margin-bottom: 2.75rem;
 }
@@ -495,15 +561,18 @@ footer .container div h4 {
   font-family: var(--open-sans-font);
   font-weight: 600;
 }
+
 footer .container div ul {
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
+
 footer .container div ul li {
   font-size: 1.25rem;
   font-family: var(--nunito-font);
   margin-bottom: 1.87rem;
 }
+
 footer .container:last-child {
   margin-bottom: 3.56rem;
 }
