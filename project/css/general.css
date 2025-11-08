@@ -1,6 +1,7 @@
 :root {
     /* 🎨 Color Palette */
-    --color-navbar-bg: #ffffff;
+    --color-primary-bg: #ffffff;
+    --color-secondary-bg: #fff3e3;
     --color-navbar-text: #000000;
     --color-hero-bg: #fff3e3;
     --color-hero-accent: #b88e2f;
@@ -12,17 +13,24 @@
     --color-border: #dcdcdb;
     --color-neutral-dark: #575757;
 
-    /* 📐 Navbar Padding */
-    --navbar-padding-top: min(3rem, 8vh);
-    /* 30px */
-    --navbar-padding-side: min(10rem, 8vw);
-    /* 100px */
-
-    /* 📦 Container Padding */
-    --container-padding-top: min(3.2rem, 6vh);
+    /* pading */
+    --size-1: min(2rem, 4vw);
+    /* 20px */
+    --size-2: min(2.5rem, 5vw);
+    /* 25px */
+    --size-3: min(3.2rem, 6vw);
     /* 32px */
-    --container-padding-side: min(5.647rem, 6vw);
-    /* 56.47px */
+    --size-4: min(4.4rem, 7vw);
+    /* 44px */
+    --size-5: min(5.6rem, 8vw);
+    /* 56px */
+    --size-6: min(7.2rem, 9vw);
+    /* 72px */
+    --size-7: min(7.5rem, 10vw);
+    /* 75px */
+    --size-10: min(10.0rem, 13vw);
+    /* 75px */
+
 
     /* 📏 Container Width */
     --container-max-width: min(144rem, 100vw);
@@ -35,24 +43,45 @@
     /* 32px */
 
 
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    /* 4px */
+    --space-sm: 0.5rem;
+    /* 8px */
+    --space-md: 1rem;
+    /* 16px */
+    --space-lg: 1.5rem;
+    /* 24px */
+    --space-xl: 2rem;
+    /* 32px */
+    --space-2xl: 3rem;
+    /* 48px */
+    --space-3xl: 4rem;
+    /* 64px */
+    --space-4xl: 6rem;
+    /* 96px */
+
+
 
     /* 🔠 Typography Sizes */
-    --font-size-base: clamp(1.4rem, 1.6vw, 1.6rem);
-    /* ~16px */
-    --font-size-xs: clamp(1.6rem, 1.8vw, 1.8rem);
-    /* ~18px */
-    --font-size-sm: clamp(1.8rem, 2vw, 2rem);
-    /* ~20px */
-    --font-size-md: clamp(2rem, 2.4vw, 2.4rem);
-    /* ~24px */
-    --font-size-lg: clamp(2.4rem, 2.8vw, 2.8rem);
-    /* ~28px */
-    --font-size-xl: clamp(2.8rem, 3.2vw, 3.2rem);
-    /* ~32px */
-    --font-size-xxl: clamp(3.2rem, 4vw, 4rem);
-    /* ~40px */
-    --font-size-hero: clamp(4.8rem, 5.2vw, 5.2rem);
-    /* ~52px */
+    --font-size-footer: clamp(1.4rem, 1.6vw, 1.6rem);
+    /* ~14–16px */
+    --font-size-base: clamp(1.6rem, 1.8vw, 1.8rem);
+    /* ~16–18px */
+    --font-size-xs: clamp(1.8rem, 2vw, 2rem);
+    /* ~18–20px */
+    --font-size-sm: clamp(2rem, 2.4vw, 2.4rem);
+    /* ~20–24px */
+    --font-size-md: clamp(2.4rem, 2.8vw, 2.8rem);
+    /* ~24–28px */
+    --font-size-lg: clamp(2.8rem, 3.2vw, 3.2rem);
+    /* ~28–32px */
+    --font-size-xl: clamp(3.2rem, 4vw, 4rem);
+    /* ~32–40px */
+    --font-size-xxl: clamp(4.8rem, 5.2vw, 5.2rem);
+    /* ~48–52px */
+    --font-size-hero: clamp(5.2rem, 6vw, 6.4rem);
+    /* ~52–64px */
 
     /* 🧵 Font Weights */
     --font-weight-regular: 400;
@@ -61,16 +90,155 @@
     --font-weight-bold: 700;
 
     /* Breakpoints */
-    --breakpoint-sm: 480px;
-    --breakpoint-md: 640px;
-    --breakpoint-lg: 768px;
-    --breakpoint-xl: 1024px;
-    --breakpoint-2xl: 1280px;
+    --breakpoint-sm: 560px;
+    --breakpoint-md: 720px;
+    --breakpoint-lg: 960px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-2xl: 1440px;
+
+    /* Typography */
+    --font-primary: "Poppins", sans-serif;
 }
 
 html {
     font-size: 62.5%;
     /* 1rem = 10px */
+    font-family: var(--font-primary);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================================================
+                            Font size
+=========================================================================== */
+
+.font-size-base {
+    font-size: var(--font-size-base);
+    /* ~16px */
+}
+
+.font-size-xs {
+    font-size: var(--font-size-xs);
+    /* ~18px */
+}
+
+.font-size-sm {
+    font-size: var(--font-size-sm);
+    /* ~20px */
+}
+
+.font-size-md {
+    font-size: var(--font-size-md);
+    /* ~24px */
+}
+
+.font-size-lg {
+    font-size: var(--font-size-lg);
+    /* ~28px */
+}
+
+.font-size-xl {
+    font-size: var(--font-size-xl);
+    /* ~32px */
+}
+
+.font-size-xxl {
+    font-size: var(--font-size-xxl);
+    /* ~40px */
+}
+
+.font-size-hero {
+    font-size: var(--font-size-hero);
+    /* ~48px */
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+
+.align-baseline {
+    align-items: baseline;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-sm {
+    gap: var(--space-sm);
+}
+
+.gap-md {
+    gap: var(--space-md);
+}
+
+.gap-lg {
+    gap: var(--space-lg);
+}
+
+.gap-xl {
+    gap: var(--space-xl);
+}
+
+.container {
+    margin: 0 auto;
 }
 
 /* #ffffff (navbar color) #fff3e3 (hero section hero background color) #8f8f8f #333333 (font section heading color) #66666 (small text) #3a3a3a(a section heading) #616161(small text) #b88e2f (hero section big font and button color) #dcdcdb #575757 #fff3e3 #000000 (navbar text) padding: 30px 100px for-navbar section top and bottom padding 32px 56.47px container: max-wid: 1440px 20px 32px(card gap) font size : 16px,

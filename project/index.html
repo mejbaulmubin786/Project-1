@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Furniro</title>
   <link rel="stylesheet" href="./css/all.min.css" />
+  <link rel="stylesheet" href="./css/general.css" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/responsive.css" />
   <link
@@ -17,10 +18,67 @@
   <!-- ========================================================================
                                NAV-BAR SECTION
 =========================================================================== -->
+  <nav class="main-navbar">
+    <div class="container">
+      <div class="nav-content flex justify-between align-center">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="#">
+            <img src="./images/logo.png" alt="Logo" />
+          </a>
+        </div>
+
+        <!-- Hamburger Icon (visible only on mobile) -->
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+
+        <!-- Main Menu -->
+        <ul class="main-menu flex justify-center align-center">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <!-- Icons -->
+        <ul class="icons flex justify-center align-center">
+          <li><a href="#"><i class="fa-light fa-user"></i></a></li>
+          <li><a href="#"><i class="fa-regular fa-magnifying-glass"></i></a></li>
+          <li><a href="#"><i class="fa-light fa-heart"></i></a></li>
+          <li><a href="#"><i class="fa-regular fa-cart-shopping"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- ========================================================================
                                BANNER SECTION
 =========================================================================== -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="hero-content-wrapper flex justify-end">
+        <div class="hero-text-block">
+          <h4 class="hero-subtitle text-semibold">New Arrival</h4>
+          <h1 class="hero-title">
+            <span>Discover Our</span>
+            <span> New Collection</span>
+          </h1>
+          <p class="hero-description text-medium">
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut</span>
+            elit tellus, luctus nec ullamcorper mattis.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#" class="btn-primary text-bold">
+              <span>BUY NOW</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ========================================================================
                                 GALLERY SECTION

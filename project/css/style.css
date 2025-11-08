@@ -1,166 +1,6 @@
 /* ========================================================================
                                 Global Styles
 =========================================================================== */
-:root {
-  /* Color Variables */
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-background-primary: #fcf8f3;
-  --color-background-secondary: #fff3e3;
-  --color-text-primary: #333333;
-  --color-text-secondary: 58, 58, 58;
-  --color-text-muted: #616161;
-  --color-text-light: #898989;
-  --color-placeholder: #b0b0b0;
-  --color-button-primary: #b88e2f;
-  --gray-dard: #3a3a3a;
-  /* Typography */
-  --font-primary: "Poppins", sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.container {
-  width: 1440px;
-  margin: 0 auto;
-}
-
-html {
-  font-size: 100%;
-  /* 16px Default */
-}
-
-body {
-  font-family: var(--font-primary);
-}
-
-span {
-  display: block;
-}
-
-.common-button {
-  padding: 1.56rem 4.5rem;
-  display: inline-block;
-  background-color: var(--color-button-primary);
-  position: relative;
-}
-
-.common-button a {
-  color: var(--color-white);
-  line-height: auto;
-  position: relative;
-  transition: 0.9s;
-  z-index: 1;
-}
-
-.common-button::before {
-  width: 0%;
-  position: absolute;
-  content: "";
-  height: 100%;
-  left: 0;
-  top: 0;
-  background-color: var(--color-white);
-  transition: 0.9s;
-}
-
-.common-button:hover::before {
-  width: 100%;
-}
-
-.common-button:hover a {
-  color: var(--color-button-primary);
-}
-
-.text-align-center {
-  text-align: center;
-}
-
-/*=========================Flex property=================================*/
-.d-flex {
-  display: flex;
-}
-
-.align-center {
-  align-items: center;
-  justify-content: center;
-}
-
-.justify-content-around {
-  align-items: center;
-  justify-content: space-around;
-}
-
-.justify-space-between {
-  align-items: center;
-  justify-content: space-between;
-}
-
-.direction-column {
-  flex-direction: column;
-}
-
-.justify-content-start {
-  justify-content: flex-start;
-  /* আইটেমগুলিকে ধারকের শুরু থেকে সারিবদ্ধ করে */
-}
-
-.align-items-start {
-  align-items: flex-start;
-  /* আইটেমগুলিকে ক্রস অক্ষের শুরুতে সারিবদ্ধ করে */
-}
-
-/*=========================Position property=================================*/
-.relative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
-/*=========================common property=================================*/
-h4,
-p,
-a {
-  font-size: 1rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-.fw-normal {
-  font-weight: 400;
-}
-
-h3 {
-  font-size: 1.25rem;
-}
-
-.fw-medium {
-  font-weight: 500;
-}
-
-.fw-semibold {
-  font-weight: 600;
-}
-
-.fw-bold {
-  font-weight: 700;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
 
 /* ========================================================================
                                Universal Selector
@@ -168,415 +8,175 @@ a {
 /* ========================================================================
                                NAV-BAR Selector
 =========================================================================== */
-.navbar {
-  padding-top: 1.43rem;
-  padding-bottom: 1.43rem;
+nav {
+  background-color: var(--color-primary-bg);
 }
 
-.navbar .container .logo {
-  flex-basis: 13%;
-  max-width: 185px;
+nav .nav-content {
+  padding: min(3rem, 4vw) var(--size-10);
 }
 
-.navbar .container .menu {
-  flex-basis: 30%;
-  max-width: 430px;
+nav .main-menu {
+  gap: var(--size-7);
 }
 
-.navbar .container .menu li a {
-  color: var(--color-black);
+nav ul li {
+  list-style: none;
 }
 
-.navbar .container .icons {
-  flex-basis: 17%;
-  max-width: 247px;
+nav ul li a {
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  color: var(--color-navbar-text);
+  font-family: var(--font-primary);
 }
 
-.navbar .container .icons i {
-  color: var(--color-black);
-  font-size: 1rem;
+nav .icons {
+  gap: var(--size-4);
 }
 
 .menu-toggle {
   display: none;
-  /* বড় স্ক্রিনে আইকন লুকানো থাকবে */
-  font-size: 24px;
-  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 2.4rem;
 }
 
 /* ========================================================================
                                BANNER SECTION
 =========================================================================== */
-
-.banner .container {
-  height: 100vh;
-  max-height: 716.83px;
-  align-items: center;
-  justify-content: flex-end;
+.hero-banner {
   background-image: url(../images/background.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 1.18rem;
-  padding-right: 3.625rem;
 }
 
-.banner .container .banner-content {
-  background-color: var(--color-background-secondary);
-  padding: 3.87rem 2.69rem 2.31rem 2.43rem;
+.hero-banner .hero-content-wrapper {
+  padding-top: 15.3rem;
+  padding-right: 5.8rem;
+  padding-bottom: 11.5rem;
 }
 
-.banner .container .banner-content h1 {
-  color: var(--color-button-primary);
-  font-size: 3.25rem;
+.hero-banner .hero-content-wrapper .hero-text-block {
+  padding: 6.2rem 4.3rem 3.7rem 3.9rem;
+  background-color: var(--color-secondary-bg);
+  width: 64.3rem;
+  border-radius: 10px;
+  /* margin: 15.3rem 5.8rem 11.5rem 73.9rem; */
 }
 
-.banner .container .banner-content p {
-  font-size: 1.125rem;
-  padding-bottom: 2.87rem;
+.hero-text-block span {
+  display: block;
 }
 
-/*----------------*/
+.hero-title {
+  font-size: var(--font-size-hero);
+  color: var(--color-hero-accent);
+}
 
+.hero-description {
+  font-size: var(--font-size-xs);
+}
+
+.hero-cta {
+  width: 22.2rem;
+  padding: var(--size-2) var(--size-6);
+  background-color: var(--color-hero-accent);
+  position: relative;
+}
+
+.hero-cta::before {
+  background-color: var(--color-primary-bg);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.9s;
+}
+
+.hero-cta:hover::before {
+  width: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+.hero-cta {
+  width: 22.2rem;
+  padding: var(--size-2) var(--size-6);
+  background-color: var(--color-hero-accent);
+  position: relative;
+  overflow: hidden;
+  /* Clipping for clean animation */
+  display: block;
+  /* Ensure full block for hover area */
+}
+
+.hero-cta a.btn-primary {
+  display: block;
+  /* Full width/height নেয়, hover easy */
+  width: 100%;
+  /* Parent width inherit */
+  height: 100%;
+  /* Optional: full height for better coverage */
+  position: static;
+  /* Key fix: No new stacking context, ::before top-এ থাকে */
+  z-index: 0;
+  /* Even if relative, ::before-এর নিচে */
+  /* Your existing btn styles here, e.g., padding, border, etc. */
+}
+
+.hero-cta::before {
+  background-color: var(--color-primary-bg);
+  content: "";
+  position: absolute;
+  width: 100%;
+  /* Initial: full overlay */
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: width 0.9s ease-in-out;
+  /* Smooth shrink */
+  z-index: 2;
+  /* Higher: button-এর উপরে stack, animation visible */
+}
+
+.hero-cta:hover::before {
+  width: 0%;
+  /* Hover: shrink from left */
+}
+
+
+
+
+
+/* <div class="hero-text-block"><h4 class="hero-subtitle text-semibold">New Arrival</h4><h1 class="hero-title"><span>Discover Our</span><span>New Collection</span></h1><p class="hero-description text-medium"><span>Lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Ut</span>elit tellus,
+luctus nec ullamcorper mattis. </p><div class="hero-cta"><a href="#" class="btn-primary text-bold"><span>BUY NOW</span></a></div></div> */
 /* ========================================================================
                                GALLERY SECTION
 =========================================================================== */
-.gallery .container {
-  padding-top: 3.52rem;
-  padding-bottom: 3.52rem;
-}
 
-.gallery .container header {
-  padding-bottom: 4rem;
-}
-
-.gallery .container .gallery-images {
-  gap: 1.2rem;
-}
-
-.gallery .container .gallery-images h3 {
-  font-size: 1.5rem;
-  margin-top: 1.875rem;
-}
 
 /* ========================================================================
                                PRODUCTS SECTION
 =========================================================================== */
-.products .container {
-  max-width: 1236px;
-  margin: 0 auto;
-  padding-bottom: 32px;
-}
-
-.products .container header {
-  padding-bottom: 4rem;
-}
-
-.products .container .products-display {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-  gap: 32px;
-  /* grid-auto-flow: row dense; */
-}
-
-.products .container .products-display .product {
-  background-color: #f4f5f7;
-  padding-bottom: min(3em, 8%);
-  position: relative;
-  overflow: hidden;
-}
-
-.products .container .products-display .product img {
-  width: 100%;
-  object-fit: cover;
-  height: auto;
-  display: block;
-}
-
-.products .container .products-display .product .overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  background-color: rgba(var(--color-text-secondary), 0.72);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: 0.9s;
-}
-
-.products .container .products-display .product:hover .overlay {
-  opacity: 1;
-}
-
-.products .container .products-display .product .overlay .icons {
-  padding-top: 1.5rem;
-  gap: 1.25rem;
-}
-
-.products .container .common-button {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  background-color: var(--color-white);
-}
-
-.products .container .common-button a {
-  color: var(--color-button-primary);
-  white-space: nowrap;
-}
-
-.products .container .common-button:hover::before {
-  background-color: var(--color-button-primary);
-}
-
-.products .container .common-button:hover a {
-  color: var(--color-white);
-}
-
-.products .container .products-display .product .overlay .icons {
-  color: var(--color-white);
-}
-
-.products .container .products-display .product .text {
-  padding-left: 1rem;
-  text-align: left;
-  white-space: nowrap;
-}
-
-.products .container .products-display .product h2 {
-  font-size: 1.5rem;
-  padding-top: 1rem;
-}
-
-.products .container .products-display .product .text p {
-  color: var(--color-text-light);
-}
-
-.products .container .products-display .product h3 del {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #b0b0b0;
-  padding-left: 1rem;
-}
-
-.products .container .common-button.btn {
-  margin-top: 2rem;
-  border: 1px solid var(--color-button-primary);
-}
 
 /* ========================================================================
                           ABOUT SECTION
 =========================================================================== */
-.about {
-  background-color: var(--color-background-primary);
-}
-
-.about .container {
-  padding-left: 6.25rem;
-  padding-top: 2.75rem;
-  padding-bottom: 2.75rem;
-  gap: 2.62rem;
-  overflow: hidden;
-}
-
-.about .container .about-content {
-  flex-basis: 29%;
-  padding-top: 6.9rem;
-  color: var(--gray-dard);
-}
-
-.about .container .about-content p {
-  padding-bottom: 1.56rem;
-}
-
-.carousel-container {
-  flex-basis: 61%;
-  gap: 1.5rem;
-}
-
-.carousel-container .overlay {
-  bottom: 1.5rem;
-  left: 1.5rem;
-  align-items: end;
-}
-
-.carousel-container .overlay h3 {
-  font-size: 1.75rem;
-  white-space: nowrap;
-}
-
-.carousel-container .overlay .text-content {
-  padding: 2rem 1rem 2rem 2rem;
-  background-color: var(--color-white);
-}
-
-.carousel-container .overlay .arrow {
-  width: 48px;
-  height: 48px;
-  background-color: var(--color-button-primary);
-}
-
-.right-bar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: var(--color-white);
-  left: 19rem;
-  top: 50%;
-  font-size: 24px;
-  color: var(--color-button-primary);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.right-bar:hover {
-  background-color: var(--color-white);
-  left: 19rem;
-  box-shadow: 0 2px 4px rgba(59, 6, 6, 0.61);
-  color: aquamarine;
-}
-
-.carousel-container .first-img {
-  flex-basis: 28%;
-}
-
-.carousel-slider {
-  gap: 1.5rem;
-}
-
-.carousel-frame {
-  margin-right: -320rem;
-}
-
-.carousel-footer {
-  margin: 2.5rem;
-  gap: 1.5rem;
-}
-
-.carousel-footer div {
-  width: 11px;
-  height: 11px;
-  background-color: #d8d8d8;
-  border-radius: 50%;
-  outline: 1px solid transparent;
-  outline-offset: 5px;
-}
-
-.about .carousel-container .carousel-frame .carousel-footer div:hover {
-  background-color: var(--color-button-primary);
-  outline: 1px solid var(--color-button-primary);
-}
 
 /* ========================================================================
                            FURNITURE-GALLERY SECTION
 =========================================================================== */
-.furniture-gallery .container {
-  height: auto;
-  padding-top: 4.18rem;
-  padding-bottom: 3.125rem;
-  text-align: center;
-  overflow: hidden;
-}
-
-.furniture-gallery .container .gallery {
-  width: 130%;
-  display: grid;
-  /* grid-template-columns: repeat(5, auto); */
-  grid-template-columns: auto auto auto auto auto auto auto auto auto;
-  /* grid-template-columns: repeat(5, minmax(0, 1fr)); */
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
-  gap: 1rem;
-}
-
-.picture-1 {
-  grid-column: 1/3;
-  grid-row: 1 / 5;
-  align-self: end;
-}
-
-.picture-2 {
-  grid-column: 3/5;
-  grid-row: 2/5;
-  align-self: end;
-}
-
-.picture-3 {
-  grid-column: 5;
-  grid-row: 4/7;
-  align-self: end;
-}
-
-.picture-4 {
-  grid-column: 6/8;
-  grid-row: 3/6;
-  align-self: end;
-}
-
-.picture-5 {
-  grid-column: 8/10;
-  grid-row: 1/6;
-  align-self: end;
-}
-
-.picture-6 {
-  grid-column: 1/4;
-  grid-row: 5/11;
-}
-
-.picture-7 {
-  grid-column: 4;
-  grid-row: 5/8;
-}
-
-.picture-8 {
-  grid-column: 6;
-  grid-row: 6/10;
-}
-
-.picture-9 {
-  grid-column: 7/9;
-  grid-row: 6/9;
-}
-
-.furniture-gallery .container .gallery img {
-  width: 100%;
-  object-fit: cover;
-  /* border: 1px solid red; */
-}
 
 /*=================================================*/
-footer .container {
-  padding-top: 3rem;
-  justify-content: space-between;
-  border-top: 2px solid rgba(0, 0, 0, 0.2);
-}
-
-footer .container img {
-  margin-bottom: 2.75rem;
-}
-
-footer .container div h4 {
-  font-size: 1.5rem;
-  font-family: var(--open-sans-font);
-  font-weight: 600;
-}
-
-footer .container div ul {
-  margin-top: 3rem;
-  margin-bottom: 5rem;
-}
-
-footer .container div ul li {
-  font-size: 1.25rem;
-  font-family: var(--nunito-font);
-  margin-bottom: 1.87rem;
-}
-
-footer .container:last-child {
-  margin-bottom: 3.56rem;
-}
-
-footer .container:last-child p:not(:first-child) {
-  text-align: right;
-}

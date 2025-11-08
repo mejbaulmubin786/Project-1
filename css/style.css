@@ -264,8 +264,8 @@ a {
 =========================================================================== */
 .products .container {
   max-width: 1236px;
-  padding: min(3.52em, 8%) min(6.375em, 8%);
   margin: 0 auto;
+  padding-bottom: 32px;
 }
 
 .products .container header {
@@ -275,7 +275,7 @@ a {
 .products .container .products-display {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-  gap: 2rem;
+  gap: 32px;
   /* grid-auto-flow: row dense; */
 }
 
