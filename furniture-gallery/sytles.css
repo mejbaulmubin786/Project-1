@@ -1,0 +1,23 @@
+body {
+    background-color: azure;
+}
+
+.products {
+    background-color: aquamarine;
+    margin: 0 auto;
+
+}
+
+.container {
+    max-width: 1236px;
+    margin: 0 auto;
+}
+
+.furniture-gallery {
+    columns: 5;
+    column-gap: 10px;
+}
+
+.furniture-gallery img {
+    width: 100%;
+}
