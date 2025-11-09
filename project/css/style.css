@@ -140,8 +140,52 @@ nav .icons {
 consectetur adipiscing elit. Ut</span>elit tellus,
 luctus nec ullamcorper mattis. </p><div class="hero-cta"><a href="#" class="btn-primary text-bold"><span>BUY NOW</span></a></div></div> */
 /* ========================================================================
-                               GALLERY SECTION
+                               BROWSE SECTION
 =========================================================================== */
+.section-browse .container {
+  margin: 0 auto;
+}
+
+
+.browse {
+  max-width: 118.3rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.browse__title {
+  font-size: var(--font-size-xl);
+  margin-top: var(--size-5);
+  margin-bottom: 0.5rem;
+}
+
+.browse__subtitle {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--size-5);
+
+}
+
+.browse__gallery {
+  gap: var(--font-size-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery__image-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.gallery__label {
+  margin-top: 1rem;
+  font-size: var(--font-size-xl);
+}
+
+
+
+
+
+/*-------------------*/
+
 
 
 /* ========================================================================
