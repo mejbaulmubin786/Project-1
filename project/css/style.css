@@ -20,15 +20,15 @@ nav .main-menu {
   gap: var(--size-7);
 }
 
-nav ul li {
-  list-style: none;
-}
 
 nav ul li a {
   font-size: var(--font-size-base);
-  text-decoration: none;
   color: var(--color-navbar-text);
   font-family: var(--font-primary);
+}
+
+nav ul li:hover a {
+  color: var(--color-hero-accent);
 }
 
 nav .icons {
@@ -61,7 +61,7 @@ nav .icons {
 .hero-banner .hero-content-wrapper .hero-text-block {
   padding: 6.2rem 4.3rem 3.7rem 3.9rem;
   background-color: var(--color-secondary-bg);
-  width: 64.3rem;
+  display: inline-block;
   border-radius: 10px;
   /* margin: 15.3rem 5.8rem 11.5rem 73.9rem; */
 }
@@ -79,46 +79,18 @@ nav .icons {
   font-size: var(--font-size-xs);
 }
 
-.hero-cta {
-  width: 22.2rem;
-  padding: var(--size-2) var(--size-6);
-  background-color: var(--color-hero-accent);
-  position: relative;
-}
-
-.hero-cta::before {
-  background-color: var(--color-primary-bg);
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  transition: 0.9s;
-}
-
-.hero-cta:hover::before {
-  width: 0%;
-}
-
-
-
-
-
-
-
-
-
 
 .hero-cta {
-  width: 22.2rem;
+  
   padding: var(--size-2) var(--size-6);
   background-color: var(--color-hero-accent);
   position: relative;
   overflow: hidden;
   /* Clipping for clean animation */
-  display: block;
+  display: inline-block;
   /* Ensure full block for hover area */
+  transition: 0.9s;
+  margin-top: var(--size-4);
 }
 
 .hero-cta a.btn-primary {
@@ -128,33 +100,38 @@ nav .icons {
   /* Parent width inherit */
   height: 100%;
   /* Optional: full height for better coverage */
-  position: static;
   /* Key fix: No new stacking context, ::before top-এ থাকে */
-  z-index: 0;
+  z-index: 100;
   /* Even if relative, ::before-এর নিচে */
   /* Your existing btn styles here, e.g., padding, border, etc. */
+    transition: 0.9s;
+    color: var(--color-primary-bg);
+    position: relative;
 }
 
 .hero-cta::before {
   background-color: var(--color-primary-bg);
   content: "";
   position: absolute;
-  width: 100%;
+  width: 0%;
   /* Initial: full overlay */
   height: 100%;
   top: 0;
   left: 0;
   transition: width 0.9s ease-in-out;
   /* Smooth shrink */
-  z-index: 2;
+  z-index: 0;
   /* Higher: button-এর উপরে stack, animation visible */
 }
 
 .hero-cta:hover::before {
-  width: 0%;
+  width: 100%;
   /* Hover: shrink from left */
 }
 
+.hero-cta:hover a.btn-primary {
+  color: var(--color-hero-accent);
+}
 
 
 

@@ -112,6 +112,11 @@ html {
     box-sizing: border-box;
 }
 
+body{
+    font-size: var(--space-md);
+}
+
+
 /* ========================================================================
                             Font size
 =========================================================================== */
@@ -241,6 +246,16 @@ html {
     margin: 0 auto;
 }
 
+
+/* Typograpy */
+a{
+    text-decoration: none;
+    font-size: var(--font-size-base);
+}
+
+ul li{
+    list-style: none;
+}
 /* #ffffff (navbar color) #fff3e3 (hero section hero background color) #8f8f8f #333333 (font section heading color) #66666 (small text) #3a3a3a(a section heading) #616161(small text) #b88e2f (hero section big font and button color) #dcdcdb #575757 #fff3e3 #000000 (navbar text) padding: 30px 100px for-navbar section top and bottom padding 32px 56.47px container: max-wid: 1440px 20px 32px(card gap) font size : 16px,
 52px 18px 32px 20px 24px 40px 28px medium,
 semibold,
