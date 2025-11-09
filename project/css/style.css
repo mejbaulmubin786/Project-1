@@ -53,13 +53,13 @@ nav .icons {
 }
 
 .hero-banner .hero-content-wrapper {
-  padding-top: 15.3rem;
-  padding-right: 5.8rem;
-  padding-bottom: 11.5rem;
+  padding-top: min(15.3rem, 20vh);
+  padding-right: min(5.8rem, 8vw);
+  padding-bottom: min(11.5rem, 16vh);
 }
 
 .hero-banner .hero-content-wrapper .hero-text-block {
-  padding: 6.2rem 4.3rem 3.7rem 3.9rem;
+  padding: min(6.2rem, 7.75vh) min(4.3rem, 5.375vh) min(3.7rem, 4.625vh) min(3.9rem, 4.875vh);
   background-color: var(--color-secondary-bg);
   display: inline-block;
   border-radius: 10px;
@@ -81,7 +81,7 @@ nav .icons {
 
 
 .hero-cta {
-  
+
   padding: var(--size-2) var(--size-6);
   background-color: var(--color-hero-accent);
   position: relative;
@@ -104,9 +104,9 @@ nav .icons {
   z-index: 100;
   /* Even if relative, ::before-এর নিচে */
   /* Your existing btn styles here, e.g., padding, border, etc. */
-    transition: 0.9s;
-    color: var(--color-primary-bg);
-    position: relative;
+  transition: 0.9s;
+  color: var(--color-primary-bg);
+  position: relative;
 }
 
 .hero-cta::before {
