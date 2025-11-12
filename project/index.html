@@ -114,16 +114,43 @@
     </div>
   </section>
 
- 
+
   <!-- ========================================================================
                                 PRODUCTS SECTION
 =========================================================================== -->
-  <section class="section-products">
+  <section class="products-section">
     <div class="container">
-      <div class="product-gallery">
+      <header class="section-header text-center">
+        <h2 class="section-title">Our Products</h2>
+      </header>
+
+      <div class="products-grid">
+        <!-- Single Product -->
+        <div class="product-card">
+          <img src="./images/products/image-1.png" alt="Syltherine chair" class="product-image" />
+          <div class="product-info">
+            <h3 class="product-name">Syltherine</h3>
+            <p class="product-desc">Stylish cafe chair</p>
+            <p class="product-price">
+              Rp 2.500.000 <del class="product-old-price">Rp 3.500.000</del>
+            </p>
+          </div>
+
+          <div class="product-overlay">
+            <button class="btn btn-primary">Add to cart</button>
+            <div class="product-actions">
+              <button class="action-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
+              <button class="action-btn"><i class="fa-solid fa-arrow-right-arrow-left"></i> Compare</button>
+              <button class="action-btn"><i class="fa-regular fa-heart"></i> Like</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat other products with same structure -->
       </div>
     </div>
   </section>
+
   <!-- ========================================================================
                                 CAROUSEL SECTION
 =========================================================================== -->
