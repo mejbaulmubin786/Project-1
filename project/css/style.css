@@ -153,11 +153,6 @@ luctus nec ullamcorper mattis. </p><div class="hero-cta"><a href="#" class="btn-
   text-align: center;
 }
 
-.browse__title {
-  font-size: var(--font-size-xl);
-  margin-top: var(--size-5);
-  margin-bottom: 0.5rem;
-}
 
 .browse__subtitle {
   font-size: var(--font-size-sm);
@@ -184,13 +179,41 @@ luctus nec ullamcorper mattis. </p><div class="hero-cta"><a href="#" class="btn-
 
 
 
-/*-------------------*/
 
-
+/* <button class="btn btn-primary">Add to cart</button> */
 
 /* ========================================================================
-                               PRODUCTS SECTION
+                              PRODUCTS SECTION
 =========================================================================== */
+.products-section {}
+
+.products-section .products-wrapper {
+  padding: var(--size-5) min(10.2rem, 14.75vw);
+}
+
+header {
+  text-align: center;
+}
+
+.products-section .products-gallery {
+  grid-template-columns: repeat(auto-fit, minmax(28.5rem, 1fr));
+  gap: min(3.2rem, 4.5vw);
+  justify-content: center;
+}
+
+.product-contant {}
+
+.products-section .products-gallery .product-info {}
+
+.products-section .products-gallery .product-card .product-info img {
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+.products-section .products-gallery .product-card {}
+
+
 
 /* ========================================================================
                           ABOUT SECTION
