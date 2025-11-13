@@ -56,3 +56,25 @@
     max-width: var(--breakpoint-2xl);
   }
 } */
+
+
+/* 
+@media (max-width: 768px) {
+  .main-wrapper {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .carousel-frame {
+    margin-right: 0;
+   
+}
+
+.carousel-dots {
+  width: auto;
+  height: auto;
+  justify-content: center;
+}
+}
+
+*/

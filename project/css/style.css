@@ -80,58 +80,6 @@ nav .icons {
 }
 
 
-.hero-cta {
-
-  padding: var(--size-2) var(--size-6);
-  background-color: var(--color-hero-accent);
-  position: relative;
-  overflow: hidden;
-  /* Clipping for clean animation */
-  display: inline-block;
-  /* Ensure full block for hover area */
-  transition: 0.9s;
-  margin-top: var(--size-4);
-}
-
-.hero-cta a.btn-primary {
-  display: block;
-  /* Full width/height নেয়, hover easy */
-  width: 100%;
-  /* Parent width inherit */
-  height: 100%;
-  /* Optional: full height for better coverage */
-  /* Key fix: No new stacking context, ::before top-এ থাকে */
-  z-index: 100;
-  /* Even if relative, ::before-এর নিচে */
-  /* Your existing btn styles here, e.g., padding, border, etc. */
-  transition: 0.9s;
-  color: var(--color-primary-bg);
-  position: relative;
-}
-
-.hero-cta::before {
-  background-color: var(--color-primary-bg);
-  content: "";
-  position: absolute;
-  width: 0%;
-  /* Initial: full overlay */
-  height: 100%;
-  top: 0;
-  left: 0;
-  transition: width 0.9s ease-in-out;
-  /* Smooth shrink */
-  z-index: 0;
-  /* Higher: button-এর উপরে stack, animation visible */
-}
-
-.hero-cta:hover::before {
-  width: 100%;
-  /* Hover: shrink from left */
-}
-
-.hero-cta:hover a.btn-primary {
-  color: var(--color-hero-accent);
-}
 
 
 
@@ -193,6 +141,7 @@ luctus nec ullamcorper mattis. </p><div class="hero-cta"><a href="#" class="btn-
 
 header {
   text-align: center;
+  margin-bottom: var(--size-3);
 }
 
 .products-section .products-gallery {
@@ -201,23 +150,218 @@ header {
   justify-content: center;
 }
 
-.product-contant {}
 
-.products-section .products-gallery .product-info {}
 
-.products-section .products-gallery .product-card .product-info img {
+
+.products-section .products-gallery .product-card .product-content img {
   width: 100%;
   object-fit: cover;
   height: auto;
 }
 
-.products-section .products-gallery .product-card {}
+.products-section .products-gallery .product-card {
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.products-section .products-gallery .product-card .product-info {
+  padding: 1.6rem;
+}
+
+.products-section .products-gallery .product-card .product-info .product-name {
+  font-size: var(--font-size-md);
+}
+
+.products-section .products-gallery .product-card .product-info .product-price {
+  font-size: var(--font-size-sm);
+}
+
+.products-section .products-gallery .product-card .product-info .product-desc {
+  font-size: var(--font-size-base);
+}
+
+.products-section .products-gallery .product-card .product-info .product-price .product-old-price {
+  font-size: var(--font-size-base);
+}
+
+
+
+.products-section .products-gallery .product-card .product-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-section-heading);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.9s;
+}
+
+.products-section .products-gallery .product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.products-section .products-gallery .product-card:hover>.product-overlay {
+  opacity: 72%;
+}
+
+.products-section .products-gallery .product-card .product-overlay .product-actions {
+  gap: var(--size-1);
+
+}
+
+.products-section .products-gallery .product-card .product-overlay .product-actions button {
+  font-size: var(--font-size-base);
+  color: var(--color-primary-bg);
+}
+
+.products-section .products-gallery .product-card .product-overlay .product-actions button:hover {
+  color: var(--color-hero-accent);
+}
+
+.products-section .products-gallery .product-card .product-overlay .btn {
+  font-size: var(--font-size-base);
+  margin-bottom: 2.5rem;
+  padding: min(1.2rem, 1.5vw) min(5.2rem, 6.5vw);
+  display: inline-block;
+  background-color: var(--color-primary-bg);
+  color: var(--color-hero-accent);
+  position: relative;
+}
+
+.products-section .products-gallery .product-card .product-overlay .btn::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: var(--color-hero-accent);
+  top: 0;
+  left: 0;
+  transition: 0.9s;
+}
+
+.products-section .products-gallery .product-card .product-overlay .btn:hover::before {
+  width: 100%;
+}
+
+.products-section .products-gallery .product-card .product-overlay .btn span {
+  position: relative;
+  transition: 0.96s;
+}
+
+.products-section .products-gallery .product-card .product-overlay .btn:hover>span {
+  color: white;
+}
 
 
 
 /* ========================================================================
-                          ABOUT SECTION
+                          CAROUSEL SECTION
 =========================================================================== */
+.carousel-section .main-wrapper {
+  padding: 4.4rem 0 4.4rem 10rem;
+  padding: clamp(2rem, 4vw, 4.4rem) 0 clamp(2rem, 4vw, 4.4rem) clamp(1rem, 5vw, 10rem);
+  flex-wrap: wrap;
+}
+
+.carousel-section .main-wrapper .carousel-intro {
+  padding-right: 4.2rem;
+}
+
+.carousel-section .main-wrapper .carousel-intro .carousel-title {
+  font-size: clamp(2rem, 2vw + 1rem, 4rem);
+  font-size: clamp(1.8rem, 2vw + 1rem, 4rem);
+}
+
+.carousel-section .main-wrapper .carousel-intro .carousel-desc {
+  font-size: clamp(1rem, calc(2vw + 0.5rem), 1.6rem);
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.6rem);
+}
+
+.carousel-intro .carousel-title span,
+.carousel-section .main-wrapper .carousel-intro .carousel-desc span {
+  display: block;
+}
+
+.carousel-section .main-wrapper .carousel-wrapper {
+  overflow: hidden;
+  gap: min(2.4rem, 3vw);
+  flex-wrap: wrap;
+}
+
+.carousel-frame {
+  margin-right: -32rem;
+}
+
+.carousel-slider {
+  gap: min(2.4rem, 3vw);
+}
+
+.carousel-feature {
+  position: relative;
+}
+
+.carousel-feature-overlay {
+  position: absolute;
+  left: 2.4rem;
+  bottom: 2.4rem;
+
+}
+
+.carousel-feature-text {
+  background-color: white;
+  padding: 3.2rem;
+}
+
+.carousel-feature-arrow {
+  padding: 1.2rem;
+  background-color: var(--color-hero-accent);
+  color: white;
+}
+
+.carousel-feature-arrow i {
+  font-size: 24px;
+}
+
+.carousel-content {
+  position: relative;
+}
+
+.carousel-nav {
+  width: clamp(2rem, 3vw, 3.5rem);
+  height: clamp(2rem, 3vw, 3.5rem);
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 26.7rem;
+  left: 35.4rem;
+  color: var(--color-hero-accent);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-dots {
+  width: 100px;
+  height: 100px;
+  padding-left: 8px;
+}
+
+.dot {
+  width: clamp(0.6rem, 1vw, 1rem);
+  height: clamp(0.6rem, 1vw, 1rem);
+  background-color: #DBDBDB;
+  border-radius: 50%;
+  outline: 1px solid transparent;
+}
+
+.dot:focus,
+.dot:hover,
+.dot:active {
+  background-color: var(--color-hero-accent);
+  outline: 2px solid var(--color-hero-accent);
+  outline-offset: 5px;
+}
 
 /* ========================================================================
                            FURNITURE-GALLERY SECTION

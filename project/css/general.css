@@ -321,3 +321,50 @@ button {
     margin-top: var(--size-5);
     margin-bottom: 0.5rem;
 }
+
+/*-----------------------------------------------*/
+.common-button {
+    background-color: var(--color-hero-accent);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    /* content অনুযায়ী সাইজ নেবে */
+    transition: 0.9s;
+    margin-top: var(--size-4);
+    /* padding এখানে রাখবে না */
+    border: 1px solid var(--color-hero-accent);
+}
+
+.common-button a.primary-button {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* overlay এর উপরে থাকবে */
+    color: var(--color-primary-bg);
+    transition: 0.9s;
+    padding: var(--size-2) var(--size-6);
+    /* আসল বাটনের সাইজ */
+    text-decoration: none;
+    /* underline বাদ */
+}
+
+.common-button::before {
+    background-color: var(--color-primary-bg);
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: width 0.9s ease-in-out;
+    z-index: 0;
+    /* overlay নিচে থাকবে */
+}
+
+.common-button:hover::before {
+    width: 100%;
+}
+
+.common-button:hover a.primary-button {
+    color: var(--color-hero-accent);
+}
