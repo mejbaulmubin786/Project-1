@@ -259,10 +259,20 @@ header {
 /* ========================================================================
                           CAROUSEL SECTION
 =========================================================================== */
+
+
+.carousel-section {
+
+  background-color: var(--color-background-primary);
+  background-color: var(--color-tertiary-bd);
+  /* background-color: red; */
+}
+
 .carousel-section .main-wrapper {
   padding: 4.4rem 0 4.4rem 10rem;
   padding: clamp(2rem, 4vw, 4.4rem) 0 clamp(2rem, 4vw, 4.4rem) clamp(1rem, 5vw, 10rem);
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .carousel-section .main-wrapper .carousel-intro {
@@ -285,7 +295,7 @@ header {
 }
 
 .carousel-section .main-wrapper .carousel-wrapper {
-  overflow: hidden;
+
   gap: min(2.4rem, 3vw);
   flex-wrap: wrap;
 }
@@ -331,17 +341,24 @@ header {
 .carousel-nav {
   width: clamp(2rem, 3vw, 3.5rem);
   height: clamp(2rem, 3vw, 3.5rem);
-  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-size: clamp(1.8rem, 1vw, 2.4rem);
   background-color: white;
   border-radius: 50%;
   position: absolute;
   top: 26.7rem;
   left: 35.4rem;
   color: var(--color-hero-accent);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(40, 4, 4, 0.30);
 }
 
-.carousel-dots {
+.carousel-nav:focus,
+.carousel-nav:hover,
+.carousel-nav:active {
+  box-shadow: 0 2px 4px rgba(59, 6, 6, 0.61);
+
+}
+
+.carousel-footer {
   width: 100px;
   height: 100px;
   padding-left: 8px;
@@ -353,14 +370,16 @@ header {
   background-color: #DBDBDB;
   border-radius: 50%;
   outline: 1px solid transparent;
+  outline-offset: 5px;
 }
 
 .dot:focus,
 .dot:hover,
 .dot:active {
   background-color: var(--color-hero-accent);
-  outline: 2px solid var(--color-hero-accent);
-  outline-offset: 5px;
+  outline: 1px solid var(--color-hero-accent);
+  box-shadow: 0 2px 4px rgba(59, 6, 6, 0.61);
+
 }
 
 /* ========================================================================

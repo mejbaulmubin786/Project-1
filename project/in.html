@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Carousel Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* 🎨 Color Palette */
+            --color-primary-bg: #ffffff;
+            --color-secondary-bg: #fff3e3;
+            --color-navbar-text: #000000;
+            --color-hero-bg: #fff3e3;
+            --color-hero-accent: #b88e2f;
+            --color-heading: #333333;
+            --color-section-heading: #3a3a3a;
+            --color-small-text-1: #666666;
+            --color-small-text-2: #616161;
+            --color-muted: #8f8f8f;
+            --color-border: #dcdcdb;
+            --color-neutral-dark: #575757;
+
+            /* Padding Scale */
+            --size-1: clamp(1rem, 2vw, 2rem);
+            /* 10-20px */
+            --size-2: clamp(1.25rem, 2.5vw, 2.5rem);
+            /* 12.5-25px */
+            --size-3: clamp(1.6rem, 3vw, 3.2rem);
+            /* 16-32px */
+            --size-4: clamp(2.2rem, 3.5vw, 4.4rem);
+            /* 22-44px */
+            --size-5: clamp(2.8rem, 4vw, 5.6rem);
+            /* 28-56px */
+            --size-6: clamp(3.6rem, 4.5vw, 7.2rem);
+            /* 36-72px */
+
+            /* 📏 Container Width */
+            --container-max-width: min(144rem, 100vw);
+            /* 1440px */
+
+            /* 🔲 Card Gaps */
+            --card-gap-x: clamp(1rem, 2vw, 2rem);
+            /* 10-20px */
+            --card-gap-y: clamp(1.6rem, 3vh, 3.2rem);
+            /* 16-32px */
+
+            /* Spacing Scale */
+            --space-xs: 0.25rem;
+            /* 4px */
+            --space-sm: 0.5rem;
+            /* 8px */
+            --space-md: 1rem;
+            /* 16px */
+            --space-lg: 1.5rem;
+            /* 24px */
+            --space-xl: 2rem;
+            /* 32px */
+            --space-2xl: 3rem;
+            /* 48px */
+            --space-3xl: 4rem;
+            /* 64px */
+            --space-4xl: 6rem;
+            /* 96px */
+
+            /* 🔠 Typography Sizes */
+            --font-size-base: clamp(1rem, 1.5vw, 1.2rem);
+            /* 10-12px base */
+            --font-size-xs: clamp(1.125rem, 1.6vw, 1.4rem);
+            /* ~11-14px */
+            --font-size-sm: clamp(1.25rem, 1.8vw, 1.6rem);
+            /* ~12.5-16px */
+            --font-size-md: clamp(1.5rem, 2.2vw, 1.8rem);
+            /* ~15-18px */
+            --font-size-lg: clamp(1.75rem, 2.6vw, 2.4rem);
+            /* ~17.5-24px */
+            --font-size-xl: clamp(2rem, 3vw, 3.2rem);
+            /* ~20-32px */
+            --font-size-xxl: clamp(2.25rem, 3.4vw, 4rem);
+            /* ~22.5-40px */
+            --font-size-hero: clamp(2.5rem, 4vw, 5.2rem);
+            /* ~25-52px */
+
+            /* 🧵 Font Weights */
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Breakpoints */
+            --breakpoint-sm: 560px;
+            --breakpoint-md: 720px;
+            --breakpoint-lg: 960px;
+            --breakpoint-xl: 1200px;
+            --breakpoint-2xl: 1440px;
+
+            /* Typography */
+            --font-primary: "Poppins", sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+            /* 1rem = 10px */
+            font-family: var(--font-primary);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+        }
+
+        /* Utility Classes */
+        .flex {
+            display: flex;
+        }
+
+        .flex-column {
+            flex-direction: column;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .align-start {
+            align-items: flex-start;
+        }
+
+        .gap-sm {
+            gap: var(--space-sm);
+        }
+
+        .gap-md {
+            gap: var(--space-md);
+        }
+
+        .gap-lg {
+            gap: var(--space-lg);
+        }
+
+        .gap-xl {
+            gap: var(--space-xl);
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--size-1);
+        }
+
+        /* Typography Utilities */
+        .font-size-sm {
+            font-size: var(--font-size-sm);
+        }
+
+        .font-size-md {
+            font-size: var(--font-size-md);
+        }
+
+        .font-size-lg {
+            font-size: var(--font-size-lg);
+        }
+
+        .font-size-xl {
+            font-size: var(--font-size-xl);
+        }
+
+        .font-size-xxl {
+            font-size: var(--font-size-xxl);
+        }
+
+        .font-size-hero {
+            font-size: var(--font-size-hero);
+        }
+
+        .font-weight-semibold {
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .font-weight-bold {
+            font-weight: var(--font-weight-bold);
+        }
+
+        /* Button Styles */
+        .common-button {
+            background-color: var(--color-hero-accent);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            transition: 0.3s ease;
+            border: 1px solid var(--color-hero-accent);
+            margin-top: var(--size-4);
+        }
+
+        .common-button a.primary-button {
+            display: inline-block;
+            color: var(--color-primary-bg);
+            padding: var(--size-2) var(--size-3);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .common-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--color-primary-bg);
+            transition: width 0.3s ease;
+            z-index: 0;
+        }
+
+        .common-button:hover::before {
+            width: 100%;
+        }
+
+        .common-button:hover a.primary-button {
+            color: var(--color-hero-accent);
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            background-color: var(--color-hero-bg);
+            padding: var(--size-4) 0;
+        }
+
+        .carousel-section .main-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--card-gap-y) var(--card-gap-x);
+            align-items: start;
+            padding: var(--size-3) 0 var(--size-3) var(--size-4);
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+        }
+
+        .carousel-section .carousel-intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--space-md);
+            padding-right: var(--size-3);
+        }
+
+        .carousel-section .carousel-title {
+            font-size: var(--font-size-xxl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-heading);
+            line-height: 1.2;
+        }
+
+        .carousel-section .carousel-title span,
+        .carousel-section .carousel-desc span {
+            display: block;
+        }
+
+        .carousel-section .carousel-desc {
+            font-size: var(--font-size-md);
+            color: var(--color-small-text-1);
+            line-height: 1.5;
+        }
+
+        /* Carousel Wrapper */
+        .carousel-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+            position: relative;
+        }
+
+        .carousel-feature {
+            position: relative;
+            width: 100%;
+            height: clamp(25rem, 40vw, 35rem);
+            overflow: hidden;
+            border-radius: var(--space-md);
+        }
+
+        .carousel-feature-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-feature-overlay {
+            position: absolute;
+            bottom: var(--space-lg);
+            left: var(--space-lg);
+            right: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+            padding: var(--space-xl) var(--space-lg);
+            border-radius: 0 0 var(--space-md) var(--space-md);
+        }
+
+        .carousel-feature-text {
+            background-color: var(--color-primary-bg);
+            padding: var(--size-2) var(--size-3);
+            border-radius: var(--space-sm);
+        }
+
+        .carousel-feature-label {
+            font-size: var(--font-size-xs);
+            color: var(--color-muted);
+            margin-bottom: var(--space-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .carousel-feature-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-heading);
+            margin: 0;
+        }
+
+        .carousel-feature-arrow {
+            padding: var(--space-md);
+            background-color: var(--color-hero-accent);
+            color: var(--color-primary-bg);
+            border-radius: 50%;
+            width: clamp(3rem, 4vw, 3.5rem);
+            height: clamp(3rem, 4vw, 3.5rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-feature-arrow:hover {
+            transform: scale(1.1);
+        }
+
+        .carousel-feature-arrow i {
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
+        }
+
+        /* Slider */
+        .carousel-frame {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .carousel-content {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            overflow: hidden;
+            border-radius: var(--space-md);
+        }
+
+        .carousel-slider {
+            display: flex;
+            gap: var(--space-lg);
+            transition: transform 0.5s ease;
+            /* For JS-based sliding, but here it's static; add JS if needed */
+        }
+
+        .carousel-image {
+            width: clamp(15rem, 25vw, 20rem);
+            height: clamp(20rem, 30vw, 25rem);
+            object-fit: cover;
+            border-radius: var(--space-sm);
+            flex-shrink: 0;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            right: -1.5rem;
+            /* Offset to appear outside slider */
+            transform: translateY(-50%);
+            width: clamp(3rem, 4vw, 3.5rem);
+            height: clamp(3rem, 4vw, 3.5rem);
+            background-color: var(--color-primary-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-hero-accent);
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
+            box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) 0;
+        }
+
+        .dot {
+            width: clamp(0.8rem, 1.2vw, 1rem);
+            height: clamp(0.8rem, 1.2vw, 1rem);
+            background-color: #DBDBDB;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot:hover,
+        .dot:focus,
+        .dot.active {
+            background-color: var(--color-hero-accent);
+            border-color: var(--color-hero-accent);
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 960px) {
+            .carousel-section .main-wrapper {
+                grid-template-columns: 1fr;
+                padding: var(--size-2) var(--size-2);
+                gap: var(--size-3);
+            }
+
+            .carousel-section .carousel-intro {
+                padding-right: 0;
+                text-align: center;
+                order: 2;
+                /* Move intro below carousel on mobile */
+            }
+
+            .carousel-wrapper {
+                order: 1;
+            }
+
+            .carousel-feature-overlay {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-md);
+                padding: var(--size-2);
+            }
+
+            .carousel-feature-text {
+                padding: var(--size-1) var(--size-2);
+                width: 100%;
+            }
+
+            .carousel-slider {
+                justify-content: center;
+            }
+
+            .carousel-image {
+                width: clamp(12rem, 30vw, 15rem);
+                height: clamp(16rem, 35vw, 20rem);
+            }
+
+            .carousel-nav {
+                right: 0;
+                top: 0;
+                bottom: 0;
+                height: 100%;
+                width: clamp(4rem, 6vw, 4rem);
+                border-radius: 0 var(--space-md) var(--space-md) 0;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .carousel-section {
+                padding: var(--size-2) 0;
+            }
+
+            .carousel-feature {
+                height: clamp(20rem, 50vw, 25rem);
+            }
+
+            .carousel-slider {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .carousel-image {
+                width: 100%;
+                max-width: 20rem;
+                height: auto;
+                aspect-ratio: 4/3;
+            }
+
+            .carousel-nav {
+                display: none;
+                /* Hide nav on very small screens */
+            }
+
+            .carousel-dots {
+                justify-content: center;
+            }
+        }
+
+        /* For sliding functionality, add this JS (optional, basic) */
+        <script> // Basic slider JS - adjust as needed
+
+        document.addEventListener('DOMContentLoaded', function() {
+                const slider=document.querySelector('.carousel-slider');
+                const nav=document.querySelector('.carousel-nav');
+                const dots=document.querySelectorAll('.dot');
+                let currentIndex=0;
+                const totalSlides=2; // Number of images in slider
+
+                function updateSlider() {
+                    slider.style.transform=`translateX(-$ {
+                            currentIndex * (100 / totalSlides)
+                        }
+
+                        %)`;
+                    dots.forEach((dot, index)=> dot.classList.toggle('active', index===currentIndex));
+                }
+
+                nav.addEventListener('click', ()=> {
+                        currentIndex=(currentIndex + 1) % totalSlides;
+                        updateSlider();
+                    });
+
+                dots.forEach((dot, index)=> {
+                        dot.addEventListener('click', ()=> {
+                                currentIndex=index;
+                                updateSlider();
+                            });
+                    });
+
+                // Auto-advance (optional)
+                setInterval(()=> {
+                        currentIndex=(currentIndex + 1) % totalSlides;
+                        updateSlider();
+                    }
+
+                    , 5000);
+            });
+        </script>
+    </style>
+</head>
+
+<body>
+    <section class="carousel-section">
+        <div class="container">
+            <div class="main-wrapper">
+                <!-- Left content -->
+                <div class="carousel-intro flex flex-column justify-center align-start">
+                    <h2 class="carousel-title font-size-xxl font-weight-semibold">
+                        <span>50+ Beautiful rooms</span> inspiration
+                    </h2>
+                    <p class="carousel-desc font-size-md">
+                        <span>Our designer already made a lot of beautiful</span> prototypes of rooms that inspire you
+                    </p>
+                    <div class="common-button">
+                        <a href="#portfolio" class="primary-button">Explore More</a>
+                    </div>
+                </div>
+
+                <!-- Carousel -->
+                <div class="carousel-wrapper">
+                    <!-- Featured image -->
+                    <div class="carousel-feature">
+                        <img src="./images/about/image-1.png" alt="Bedroom inspiration"
+                            class="carousel-feature-image" />
+                        <div class="carousel-feature-overlay flex justify-between align-end">
+                            <div class="carousel-feature-text">
+                                <p class="carousel-feature-label font-size-xs">01 — Bed Room</p>
+                                <h3 class="carousel-feature-title font-size-lg font-weight-bold">Inner Peace</h3>
+                            </div>
+                            <div class="carousel-feature-arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider -->
+                    <div class="carousel-frame">
+                        <div class="carousel-content">
+                            <div class="carousel-slider gap-lg">
+                                <img class="carousel-image" src="./images/about/image-2.png" alt="Room inspiration 1" />
+                                <img class="carousel-image" src="./images/about/image-3.png" alt="Room inspiration 2" />
+                            </div>
+                            <div class="carousel-nav">
+                                <i class="fa-regular fa-angle-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Footer dots -->
+                        <div class="carousel-dots gap-sm">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
